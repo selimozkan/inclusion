@@ -1,0 +1,157 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from akcel.w3itexpert.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Sep 2024 03:52:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="">
+<meta name="author" content="DexignZone">
+<meta name="robots" content="">
+<meta name="description" content="Akcel Crowdfunding & Charity is a Responsive ASP.NET Core MVC Template that can be used to build Non-Profit, Charity Website. Template is well designed and well coded and flexible">
+<meta property="og:title" content="Akcel - Crowdfunding & Charity ASP.NET Core MVC Template">
+<meta property="og:description" content="Akcel Crowdfunding & Charity is a Responsive ASP.NET Core MVC Template that can be used to build Non-Profit, Charity Website. Template is well designed and well coded and flexible">
+<meta property="og:image" content="../products.w3itexpert.com/images/akcel_ogimage.png">
+<meta name="format-detection" content="telephone=no">
+
+<!-- Mobile Specific -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inclusion Disabled People</title>
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+
+    <!-- Stylesheet -->
+    <link href="{% static 'vendor/animate/animate.css' %}' %}" rel="stylesheet">
+    <link href="{% static 'vendor/magnific-popup/magnific-popup.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-select/css/bootstrap-select.min.css' %}" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" class="skin" href="{% static 'css/skin/skin-1.css' %}">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&amp;family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+</head>
+<body id="bg">
+  <div id="loading-area" class="loading-page-1">
+    <div class="loading-inner">
+      <div class="item-wrapper">
+        <img class="item1" src="{% static 'images/hand1.png' %}" alt="">
+        <img class="item2" src="{% static 'images/hand2.png' %}" alt="">
+        <img class="item3" src="{% static 'images/heart.png' %}" alt="">
+      </div>
+      <div class="load-text">
+        <span data-text="I" class="text-load">I</span>
+        <span data-text="n" class="text-load">n</span>
+        <span data-text="c" class="text-load">c</span>
+        <span data-text="l" class="text-load">l</span>
+        <span data-text="u" class="text-load">u</span>
+        <span data-text="s" class="text-load">s</span>
+        <span data-text="i" class="text-load">i</span>
+        <span data-text="o" class="text-load">o</span>
+        <span data-text="n" class="text-load">n</span>
+        </div>
+    </div>
+  </div>
+  <div class="page-wraper">
+    <!-- Header -->
+    <header class="site-header mo-left header style-1">
+      <!-- Top Header -->
+      <div class="top-bar">
+        <div class="container">
+          <div class="dz-topbar-inner d-flex justify-content-between align-items-center">
+            <div class="dz-topbar-left">
+              <ul>
+                <li>Welcome to Inclusion Disabled People Web Site</li>
+              </ul>
+            </div>
+            <div class="dz-topbar-right">
+              <ul>
+                {% comment %} <li><i class="fas fa-map-marker-alt"></i> 394-091-3312</li> {% endcomment %}
+                <li><i class="fas fa-envelope"></i>web@inclusiondisabledprople.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Header -->
+      <div class="sticky-header main-bar-wraper navbar-expand-lg">
+        <div class="main-bar clearfix ">
+          <div class="container clearfix">
+            <!-- Website Logo -->
+            <div class="logo-header mostion logo-dark">
+              <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
+            </div>
+
+            <!-- Nav Toggle Button -->
+            <button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            <!-- Header Nav -->
+            <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
+              <div class="logo-header logo-dark">
+                <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
+              </div>
+              <ul class="nav navbar-nav navbar navbar-left">
+                <li><a href="{% url 'index' %}">{% if language == 'en' %}Home{% else %}Haubtseite{% endif %}</a></li>
+                <li><a href="{% url 'about' %}">{% if language == 'en' %}About Us{% else %}&#220;ber Uns{% endif %}</a></li>
+                <li><a href="{% url 'projects' %}">{% if language == 'en' %}Projects{% else %}Projekte{% endif %}</a></li>
+                <li><a href="{% url 'events' %}">{% if language == 'en' %}Events{% else %}Aktuelles{% endif %}</a></li>
+                <li><a href="{% url 'contact' %}">{% if language == 'en' %}Contact Us{% else %}Kontakt Uns{% endif %}</a></li>
+                <li class="sub-menu-down">
+                  <a href="javascript:void(0);">Language</a>
+                  <ul class="sub-menu">
+                    <li><a href="{% url 'change-language' 'de' %}">{% if language == 'de' %}German{% else %}Deutsch{% endif %}</a></li>
+                    <li><a href="{% url 'change-language' 'en' %}">{% if language == 'en' %}English{% else %}Englisch{% endif %}</a></li>
+                  </ul>
+              <div class="header-bottom">
+                {% comment %} <a href="javascript:void(0);" class="btn btn-light btn-login btn-sm" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                  <i class="flaticon-logout me-3"></i>Login / Sign Up
+                </a> {% endcomment %}
+                <div class="dz-social-icon">
+                  <ul>
+                    <li><a class="fab fa-facebook-f" href="https://www.facebook.com/"></a></li>
+                    <li><a class="fab fa-instagram" href="https://www.instagram.com/"></a></li>
+                    <li><a class="fab fa-twitter" href="https://twitter.com/"></a></li>
+                    <li><a class="fab fa-youtube" href="https://www.youtube.com/"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main Header End -->
+    </header>
+    <!-- Header End -->
+
+    {% block content %}
+    {% endblock content %}
+
+  </div>
+  <!-- JAVASCRIPT FILES ========================================= -->
+  <script src="{% static 'js/jquery.min.js' %}"></script><!-- JQUERY.MIN JS -->
+  <script src="{% static 'vendor/wow/wow.js' %}"></script><!-- WOW JS -->
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script><!-- BOOTSTRAP.MIN JS -->
+  <script src="{% static 'vendor/magnific-popup/magnific-popup.js' %}"></script><!-- MAGNIFIC POPUP JS -->
+  <script src="{% static 'vendor/counter/waypoints-min.js' %}"></script><!-- WAYPOINTS JS -->
+  <script src="{% static 'vendor/counter/counterup.min.js' %}"></script><!-- COUNTERUP JS -->
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script><!-- OWL-CAROUSEL -->
+  <script src="{% static 'js/dz.carousel.js' %}"></script><!-- OWL-CAROUSEL -->
+  <script src="{% static 'js/dz.ajax.js' %}"></script><!-- AJAX -->
+  <script src="{% static 'js/custom.js' %}"></script><!-- CUSTOM JS -->
+</body>
+
+</html>
