@@ -4,31 +4,50 @@ from django.http import HttpResponseRedirect
 
 def Index(request):
     lang = request.session.get("language", "en")
-    return render(request, "web/index.html", {"language": lang})
+    context = {
+        "language": lang,
+    }
+    return render(request, "web/index.html", context)
 
 
 def About(request):
     lang = request.session.get("language", "en")
-    context = {"language": lang}
-    return render(request, "web/aboutus.html", {"context": context})
+    context = {
+        "language": lang,
+    }
+    return render(request, "web/about.html", context)
 
 
-def Projects(request):
+def Project(request):
     lang = request.session.get("language", "en")
-    context = {"language": lang}
-    return render(request, "web/projects.html", {"context": context})
+    context = {
+        "language": lang,
+    }
+    return render(request, "web/projects.html", context)
 
 
-def Events(request):
+def Activities(request):
     lang = request.session.get("language", "en")
-    context = {"language": lang}
-    return render(request, "web/events.html", {"context": context})
+    context = {
+        "language": lang,
+    }
+    return render(request, "web/blog.html", context)
+
+
+def Activity_detail(request):
+    lang = request.session.get("language", "en")
+    context = {
+        "language": lang,
+    }
+    return render(request, "web/blogdetails.html", context)
 
 
 def Contact(request):
     lang = request.session.get("language", "en")
-    context = {"language": lang}
-    return render(request, "web/contact.html", {"context": context})
+    context = {
+        "language": lang,
+    }
+    return render(request, "web/contact.html", context)
 
 
 def change_language(request, lng="en"):

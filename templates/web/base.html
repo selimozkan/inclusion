@@ -3,42 +3,40 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from akcel.w3itexpert.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Sep 2024 03:52:32 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
-    <!-- Meta -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="keywords" content="">
-<meta name="author" content="DexignZone">
-<meta name="robots" content="">
-<meta name="description" content="Akcel Crowdfunding & Charity is a Responsive ASP.NET Core MVC Template that can be used to build Non-Profit, Charity Website. Template is well designed and well coded and flexible">
-<meta property="og:title" content="Akcel - Crowdfunding & Charity ASP.NET Core MVC Template">
-<meta property="og:description" content="Akcel Crowdfunding & Charity is a Responsive ASP.NET Core MVC Template that can be used to build Non-Profit, Charity Website. Template is well designed and well coded and flexible">
-<meta property="og:image" content="../products.w3itexpert.com/images/akcel_ogimage.png">
-<meta name="format-detection" content="telephone=no">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="">
+  <meta name="author" content="DexignZone">
+  <meta name="robots" content="">
+  <meta name="description" content="Inclusion Disabled People">
+  <meta property="og:title" content="Inclusion Disabled People">
+  <meta property="og:description" content="Inclusion Disabled People">
+  <meta property="og:image" content="../products.w3itexpert.com/images/akcel_ogimage.png">
+  <meta name="format-detection" content="telephone=no">
 
-<!-- Mobile Specific -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inclusion Disabled People</title>
+  <!-- Mobile Specific -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inclusion Disabled People</title>
 
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+  <!-- Favicon icon -->
+  <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
 
-    <!-- Stylesheet -->
-    <link href="{% static 'vendor/animate/animate.css' %}' %}" rel="stylesheet">
-    <link href="{% static 'vendor/magnific-popup/magnific-popup.min.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/bootstrap-select/css/bootstrap-select.min.css' %}" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link href="{% static 'vendor/animate/animate.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/magnific-popup/magnific-popup.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-select/css/bootstrap-select.min.css' %}" rel="stylesheet">
 
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" class="skin" href="{% static 'css/skin/skin-1.css' %}">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" class="skin" href="{% static 'css/skin/skin-1.css' %}">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&amp;family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&amp;family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 </head>
 <body id="bg">
   <div id="loading-area" class="loading-page-1">
@@ -70,7 +68,7 @@
           <div class="dz-topbar-inner d-flex justify-content-between align-items-center">
             <div class="dz-topbar-left">
               <ul>
-                <li>Welcome to Inclusion Disabled People Web Site</li>
+                <li>Welcome to Inclusion Disabled People KA210-SSP Erasmus+ Web Site</li>
               </ul>
             </div>
             <div class="dz-topbar-right">
@@ -107,13 +105,13 @@
               <ul class="nav navbar-nav navbar navbar-left">
                 <li><a href="{% url 'index' %}">{% if language == 'en' %}Home{% else %}Haubtseite{% endif %}</a></li>
                 <li><a href="{% url 'about' %}">{% if language == 'en' %}About Us{% else %}&#220;ber Uns{% endif %}</a></li>
-                <li><a href="{% url 'projects' %}">{% if language == 'en' %}Projects{% else %}Projekte{% endif %}</a></li>
-                <li><a href="{% url 'events' %}">{% if language == 'en' %}Events{% else %}Aktuelles{% endif %}</a></li>
+                <li><a href="{% url 'project' %}">{% if language == 'en' %}About The Project{% else %}&#220;ber den Projekt{% endif %}</a></li>
+                <li><a href="{% url 'activities' %}">{% if language == 'en' %}Activities{% else %}Aktuelles{% endif %}</a></li>
                 <li><a href="{% url 'contact' %}">{% if language == 'en' %}Contact Us{% else %}Kontakt Uns{% endif %}</a></li>
                 <li class="sub-menu-down">
                   <a href="javascript:void(0);">Language</a>
                   <ul class="sub-menu">
-                    <li><a href="{% url 'change-language' 'de' %}">{% if language == 'de' %}German{% else %}Deutsch{% endif %}</a></li>
+                    <li><a href="{% url 'change-language' 'de' %}">{% if language == 'en' %}German{% else %}Deutsch{% endif %}</a></li>
                     <li><a href="{% url 'change-language' 'en' %}">{% if language == 'en' %}English{% else %}Englisch{% endif %}</a></li>
                   </ul>
               <div class="header-bottom">

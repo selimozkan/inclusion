@@ -13925,6 +13925,7 @@ footer {
   z-index: 9; }
 
 .site-footer.style-1 {
+  background-color: #051D15;
   --title: rgba(255,255,255,0.7);
   position: relative;
   z-index: 0;
@@ -13958,7 +13959,8 @@ footer {
     color: #fff; }
     @media only screen and (max-width: 575px) {
       .site-footer.style-1 .footer-title {
-        margin-bottom: 20px; } }
+        margin-bottom: 20px; }
+    }
   .site-footer.style-1 .widget_services > ul {
     margin-top: -.5rem; }
   .site-footer.style-1 .recent-posts-entry .widget-post-bx .widget-post .dz-meta ul li {
@@ -20410,7 +20412,7 @@ ul a.rsswidget {
   .banner-one .dz-shape .shape-1 {
     position: absolute;
     right: 47%;
-    bottom: 14%; }
+    bottom: 1%; }
   .banner-one .dz-shape .shape-2 {
     position: absolute;
     left: 2%;
@@ -23660,7 +23662,11 @@ ul a.rsswidget {
 .author-wrappper {
   display: flex;
   align-items: center;
-  margin-top: 15px; }
+  margin: 0;
+  padding: 0;
+  margin-top: 15px;
+  width: 100%;
+  }
   .author-wrappper .author-media {
     height: 50px;
     width: 50px;
@@ -23672,9 +23678,9 @@ ul a.rsswidget {
     margin-bottom: 0px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap; }
     .author-wrappper .author-content .author-head .author-name {
-      float: left;
       margin-right: 10px;
       margin-bottom: 0;
       font-size: 15px;
@@ -23683,9 +23689,9 @@ ul a.rsswidget {
       transition: all 0.7s; }
       .author-wrappper .author-content .author-head .author-name:hover {
         color: var(--primary); }
-    .author-wrappper .author-content .author-head .rating-list li {
-      display: inline-block;
-      font-size: 13px;
+    .author-wrappper .author-content .author-head .content-date {
+      margin-top: 2px;
+      font-size: 15px;
       color: #fe8d4d; }
   .author-wrappper .author-content .author-meta {
     margin: 0 -10px;
@@ -26539,4 +26545,13 @@ pre {
       display: block;
       margin-bottom: 20px; } }
 
-/*# sourceMappingURL=style.css.map */
+  .site-footer.style-1 .web-author {
+    margin-bottom: 10px;
+  }
+  .site-footer.style-1 .web-author a {
+    color: orange !important;
+  }
+  .site-footer.style-1 .web-author a:hover {
+    color: orange !important;
+  }
+    
