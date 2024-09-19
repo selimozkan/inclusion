@@ -9,12 +9,25 @@
 			<div class="row banner-inner">
 				<div class="col-lg-8 col-md-7">
 					<div class="banner-content">
-						<h5 class="sub-title text-primary">Welcome</h5>
+						<h5 class="sub-title text-primary">
+						{% if language == 'en' %}
+							Welcome
+						{% else %}
+							Willkommen
+						{% endif %}
+						</h5>
 						<h1 class="title">
 							We help for Inclusion of Disabled People
 						</h1>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
-						<a href="{% url 'about' %}" class="btn btn-secondary btnhover2 m-r15">Learn More <i class="flaticon-right-arrows ms-3 scale1"></i></a>
+						<a href="{% url 'about' %}" class="btn btn-secondary btnhover2 m-r15">
+							{% if language == 'en' %}
+								Learn More
+							{% else %}
+								Mehr erfahren
+							{% endif %}
+							<i class="flaticon-right-arrows ms-3 scale1"></i>
+						</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-5">

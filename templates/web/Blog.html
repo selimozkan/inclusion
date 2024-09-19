@@ -4,15 +4,15 @@
 {% block content %}
 <div class="page-content bg-white">
 	<!-- Banner  -->
-	<div class="dz-bnr-inr dz-bnr-inr-sm style-1 text-center overlay-primary-dark" style="background-image:url('../assets/images/banner/bnr5.jpg');">
+	<div class="dz-bnr-inr dz-bnr-inr-sm style-1 text-center overlay-primary-dark" style="background-image:url('{% static 'images/banner/bnr5.jpg' %}');">
 		<div class="container">
 			<div class="dz-bnr-inr-entry">
-				<h1>Blog List</h1>
+				<h1>{% if language == 'en' %}Activities{% else %}Aktivitäten{% endif %}</h1>
 				<!-- Breadcrumb Row -->
 				<nav aria-label="breadcrumb" class="breadcrumb-row">
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Blog List</li>
+						<li class="breadcrumb-item"><a href="{% url 'index' %}">{% if language == 'en' %}Home{% else %}Hauptseite{% endif %}</a></li>
+						<li class="breadcrumb-item active" aria-current="page">{% if language == 'en' %}Activities{% else %}Aktivitäten{% endif %}</li>
 					</ul>
 				</nav>
 				<!-- Breadcrumb Row End -->
@@ -27,20 +27,17 @@
 					<div class="col-12 m-b30">
 						<div class="dz-card style-1 blog-half">
 							<div class="dz-media">
-								<a href="BlogDetails.html"><img src="../assets/images/blog/blog-grid/pic4.jpg" alt=""></a>
+								<a href="{% url 'activity_detail' %}"><img src="{% static 'images/blog/blog-grid/pic4.jpg' %}" alt=""></a>
 								<ul class="dz-badge-list">
 									<li><a href="javascript:void(0);" class="dz-badge">HEALTH</a></li>
 								</ul>
-								<a href="BlogDetails.html" class="btn btn-secondary">Read More</a>
+								<a href="{% url 'activity_detail' %}" class="btn btn-secondary">{% if language == 'en' %}Read More{% else %}Mehr Lesen{% endif %}</a>
 							</div>
 							<div class="dz-info">
-								<h5 class="dz-title"><a href="BlogDetails.html">Partnering to create a community</a></h5>
+								<h5 class="dz-title"><a href="{% url 'activity_detail' %}">Partnering to create a community</a></h5>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
 
 								<div class="author-wrappper">
-									<div class="author-media">
-										<img src="../assets/images/avatar/avatar2.jpg" alt="">
-									</div>
 									<div class="author-content">
 										<div class="author-head">
 											<h6 class="author-name">Hawkins Junior</h6>
@@ -54,20 +51,17 @@
 						</div>
 						<div class="dz-card style-1 blog-half">
 							<div class="dz-media">
-								<a href="BlogDetails.html"><img src="../assets/images/blog/blog-grid/pic3.jpg" alt=""></a>
+								<a href="{% url 'activity_detail' %}"><img src="{% static 'images/blog/blog-grid/pic3.jpg' %}" alt=""></a>
 								<ul class="dz-badge-list">
 									<li><a href="javascript:void(0);" class="dz-badge">TECHNOLOGY</a></li>
 								</ul>
-								<a href="BlogDetails.html" class="btn btn-secondary">Read More</a>
+								<a href="{% url 'activity_detail' %}" class="btn btn-secondary">{% if language == 'en' %}Read More{% else %}Mehr Lesen{% endif %}</a>
 							</div>
 							<div class="dz-info">
-								<h5 class="dz-title"><a href="BlogDetails.html">4 Things parents learned for they jids in 2020 </a></h5>
+								<h5 class="dz-title"><a href="{% url 'activity_detail' %}">4 Things parents learned for they jids in 2020 </a></h5>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
 
 								<div class="author-wrappper">
-									<div class="author-media">
-										<img src="../assets/images/avatar/avatar3.jpg" alt="">
-									</div>
 									<div class="author-content">
 										<div class="author-head">
 											<h6 class="author-name">Tom wilson</h6>
@@ -81,20 +75,17 @@
 						</div>
 						<div class="dz-card style-1 blog-half">
 							<div class="dz-media">
-								<a href="BlogDetails.html"><img src="../assets/images/blog/blog-grid/pic2.jpg" alt=""></a>
+								<a href="{% url 'activity_detail' %}"><img src="{% static 'images/blog/blog-grid/pic2.jpg' %}" alt=""></a>
 								<ul class="dz-badge-list">
 									<li><a href="javascript:void(0);" class="dz-badge">EDUCATION</a></li>
 								</ul>
-								<a href="BlogDetails.html" class="btn btn-secondary">Read More</a>
+								<a href="{% url 'activity_detail' %}" class="btn btn-secondary">{% if language == 'en' %}Read More{% else %}Mehr Lesen{% endif %}</a>
 							</div>
 							<div class="dz-info">
-								<h5 class="dz-title"><a href="BlogDetails.html">He Created the Web. Now He’s Out to Remake </a></h5>
+								<h5 class="dz-title"><a href="{% url 'activity_detail' %}">He Created the Web. Now He’s Out to Remake </a></h5>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
 
 								<div class="author-wrappper">
-									<div class="author-media">
-										<img src="../assets/images/avatar/avatar4.jpg" alt="">
-									</div>
 									<div class="author-content">
 										<div class="author-head">
 											<h6 class="author-name">Adam Jordon</h6>
@@ -108,20 +99,17 @@
 						</div>
 						<div class="dz-card style-1 blog-half">
 							<div class="dz-media">
-								<a href="BlogDetails.html"><img src="../assets/images/blog/blog-grid/pic4.jpg" alt=""></a>
+								<a href="{% url 'activity_detail' %}"><img src="{% static 'images/blog/blog-grid/pic4.jpg' %}" alt=""></a>
 								<ul class="dz-badge-list">
 									<li><a href="javascript:void(0);" class="dz-badge">DESIGN</a></li>
 								</ul>
-								<a href="BlogDetails.html" class="btn btn-secondary">Read More</a>
+								<a href="{% url 'activity_detail' %}" class="btn btn-secondary">{% if language == 'en' %}Read More{% else %}Mehr Lesen{% endif %}</a>
 							</div>
 							<div class="dz-info">
-								<h5 class="dz-title"><a href="BlogDetails.html">New vaccine for cattle calf loss learned </a></h5>
+								<h5 class="dz-title"><a href="{% url 'activity_detail' %}">New vaccine for cattle calf loss learned </a></h5>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
 
 								<div class="author-wrappper">
-									<div class="author-media">
-										<img src="../assets/images/avatar/avatar2.jpg" alt="">
-									</div>
 									<div class="author-content">
 										<div class="author-head">
 											<h6 class="author-name">Hawkins Junior</h6>
@@ -135,20 +123,17 @@
 						</div>
 						<div class="dz-card style-1 blog-half">
 							<div class="dz-media">
-								<a href="BlogDetails.html"><img src="../assets/images/blog/blog-grid/pic4.jpg" alt=""></a>
+								<a href="{% url 'activity_detail' %}"><img src="{% static 'images/blog/blog-grid/pic4.jpg' %}" alt=""></a>
 								<ul class="dz-badge-list">
 									<li><a href="javascript:void(0);" class="dz-badge">HEALTH</a></li>
 								</ul>
-								<a href="BlogDetails.html" class="btn btn-secondary">Read More</a>
+								<a href="{% url 'activity_detail' %}" class="btn btn-secondary">{% if language == 'en' %}Read More{% else %}Mehr Lesen{% endif %}</a>
 							</div>
 							<div class="dz-info">
-								<h5 class="dz-title"><a href="BlogDetails.html">Partnering to create a community</a></h5>
+								<h5 class="dz-title"><a href="{% url 'activity_detail' %}">Partnering to create a community</a></h5>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
 
 								<div class="author-wrappper">
-									<div class="author-media">
-										<img src="../assets/images/avatar/avatar2.jpg" alt="">
-									</div>
 									<div class="author-content">
 										<div class="author-head">
 											<h6 class="author-name">Hawkins Junior</h6>
@@ -184,12 +169,12 @@
 					<aside class="side-bar sticky-top right">
 						<div class="widget style-1">
 							<div class="widget-title">
-								<h4 class="title">Search</h4>
+								<h4 class="title">{% if language == 'en' %}Search{% else %}Suchen{% endif %}</h4>
 							</div>
 							<div class="search-bx">
 								<form role="search" method="post">
 									<div class="input-group">
-										<input name="text" class="form-control" placeholder="Search Here..." type="text">
+										<input name="text" class="form-control" placeholder="{% if language == 'en' %}Search Here...{% else %}Suche hier...{% endif %}" type="text">
 										<span class="input-group-btn">
 											<button type="submit" class="btn btn-primary sharp radius-no"><i class="la la-search scale3"></i></button>
 										</span>
@@ -200,7 +185,7 @@
 
 						<div class="widget style-1 widget_categories">
 							<div class="widget-title">
-								<h4 class="title">Category</h4>
+								<h4 class="title">{% if language == 'en' %}Category{% else %}Kategorie{% endif %}</h4>
 							</div>
 							<ul>
 								<li class="cat-item"><a href="javascript:void(0);">Software</a></li>
@@ -211,56 +196,10 @@
 								<li class="cat-item"><a href="javascript:void(0);">Development</a></li>
 							</ul>
 						</div>
-						<div class="widget style-1 recent-posts-entry">
-							<div class="widget-title">
-								<h4 class="title">Recent Post</h4>
-							</div>
-							<div class="widget-post-bx">
-								<div class="widget-post clearfix">
-									<div class="dz-media">
-										<img src="../assets/images/blog/recent-blog/pic1.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<div class="dz-meta">
-											<ul>
-												<li class="post-date"> 7 March, 2022</li>
-											</ul>
-										</div>
-										<h6 class="title"><a href="BlogDetails.html">Aliqua sodales vestibulum risus nterdum malesuad</a></h6>
-									</div>
-								</div>
-								<div class="widget-post clearfix">
-									<div class="dz-media">
-										<img src="../assets/images/blog/recent-blog/pic2.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<div class="dz-meta">
-											<ul>
-												<li class="post-date"> 6 March, 2022 </li>
-											</ul>
-										</div>
-										<h6 class="title"><a href="BlogDetails.html">How To Make Money From The agency Phenomenon</a></h6>
-									</div>
-								</div>
-								<div class="widget-post clearfix">
-									<div class="dz-media">
-										<img src="../assets/images/blog/recent-blog/pic3.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<div class="dz-meta">
-											<ul>
-												<li class="post-date"> 5 March, 2022 </li>
-											</ul>
-										</div>
-										<h6 class="title"><a href="BlogDetails.html">The 8 Biggest Agency Mistakes You Can Easily</a></h6>
-									</div>
-								</div>
-							</div>
-						</div>
 
 						<div class="widget style-1 widget_tag_cloud">
 							<div class="widget-title">
-								<h4 class="title">Popular Tags</h4>
+								<h4 class="title">{% if language == 'en' %}Popular Tags{% else %}Beliebte Tags{% endif %}</h4>
 							</div>
 							<div class="tagcloud">
 								<a href="javascript:void(0);">Mock-Ups</a>

@@ -68,7 +68,13 @@
           <div class="dz-topbar-inner d-flex justify-content-between align-items-center">
             <div class="dz-topbar-left">
               <ul>
-                <li>Welcome to Inclusion Disabled People KA210-SSP Erasmus+ Web Site</li>
+                <li>
+                {% if language == 'en' %}
+                Welcome to Inclusion Disabled People KA210-SSP Erasmus+ Web Site
+                {% else %}
+                Willkommen auf der Erasmus+ Website für Inklusion Behinderter Menschen KA210-SSP  
+                {% endif %}
+                </li>
               </ul>
             </div>
             <div class="dz-topbar-right">
