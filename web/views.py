@@ -18,14 +18,6 @@ def About(request):
     return render(request, "web/about.html", context)
 
 
-def Project(request):
-    lang = request.session.get("language", "en")
-    context = {
-        "language": lang,
-    }
-    return render(request, "web/projects.html", context)
-
-
 def Activities(request):
     lang = request.session.get("language", "en")
     context = {
@@ -34,7 +26,7 @@ def Activities(request):
     return render(request, "web/blog.html", context)
 
 
-def Activity_detail(request):
+def Activity(request, slug=""):
     lang = request.session.get("language", "en")
     context = {
         "language": lang,

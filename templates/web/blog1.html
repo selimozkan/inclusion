@@ -1,0 +1,237 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="page-content bg-white">
+	<!-- Banner  -->
+	<div class="dz-bnr-inr dz-bnr-inr-sm style-1 text-center overlay-primary-dark" style="background-image:url('{% static 'images/banner/bnr5.jpg' %}');">
+		<div class="container">
+			<div class="dz-bnr-inr-entry">
+				<h1>{% if language == 'en' %}Activities{% else %}Aktivitäten{% endif %}</h1>
+				<!-- Breadcrumb Row -->
+				<nav aria-label="breadcrumb" class="breadcrumb-row">
+					<ul class="breadcrumb">
+						<li class="breadcrumb-item"><a href="{% url 'index' %}">{% if language == 'en' %}Home{% else %}Hauptseite{% endif %}</a></li>
+						<li class="breadcrumb-item active" aria-current="page">{% if language == 'en' %}Activities{% else %}Aktivitäten{% endif %}</li>
+					</ul>
+				</nav>
+				<!-- Breadcrumb Row End -->
+			</div>
+		</div>
+	</div>
+	<!-- Banner End -->
+	<section class="content-inner-2">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12 col-lg-12 m-b40">
+					<div class="col-12 m-b30">
+						<div class="dz-card style-1 blog-half">
+							<div class="dz-media">
+								<a href="{% url 'activity' 'slug' %}"><img src="{% static 'images/blog/blog-grid/pic4.jpg' %}" alt=""></a>
+								<a href="{% url 'activity' 'slug' %}" class="btn btn-secondary">{% if language == 'en' %}Read More{% else %}Mehr Lesen{% endif %}</a>
+							</div>
+							<div class="dz-info">
+								<h5 class="dz-title"><a href="{% url 'activity' 'slug' %}">Partnering to create a community</a></h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
+
+								<div class="author-wrappper">
+									<div class="author-content">
+										<div class="author-head">
+											<h6 class="author-name">Hawkins Junior</h6>
+										</div>
+										<ul class="author-meta">
+											<li class="date">November 21th, 2022</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="dz-card style-1 blog-half">
+							<div class="dz-media">
+								<a href="{% url 'activity' 'slug' %}"><img src="{% static 'images/blog/blog-grid/pic3.jpg' %}" alt=""></a>
+								<a href="{% url 'activity' 'slug' %}" class="btn btn-secondary">{% if language == 'en' %}Read More{% else %}Mehr Lesen{% endif %}</a>
+							</div>
+							<div class="dz-info">
+								<h5 class="dz-title"><a href="{% url 'activity' 'slug' %}">4 Things parents learned for they jids in 2020 </a></h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
+
+								<div class="author-wrappper">
+									<div class="author-content">
+										<div class="author-head">
+											<h6 class="author-name">Tom wilson</h6>
+										</div>
+										<ul class="author-meta">
+											<li class="date">November 21th, 2022</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="dz-card style-1 blog-half">
+							<div class="dz-media">
+								<a href="{% url 'activity' 'slug' %}"><img src="{% static 'images/blog/blog-grid/pic2.jpg' %}" alt=""></a>
+								<a href="{% url 'activity' 'slug' %}" class="btn btn-secondary">{% if language == 'en' %}Read More{% else %}Mehr Lesen{% endif %}</a>
+							</div>
+							<div class="dz-info">
+								<h5 class="dz-title"><a href="{% url 'activity' 'slug' %}">He Created the Web. Now He’s Out to Remake </a></h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
+
+								<div class="author-wrappper">
+									<div class="author-content">
+										<div class="author-head">
+											<h6 class="author-name">Adam Jordon</h6>
+										</div>
+										<ul class="author-meta">
+											<li class="date">November 21th, 2022</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="dz-card style-1 blog-half">
+							<div class="dz-media">
+								<a href="{% url 'activity' 'slug' %}"><img src="{% static 'images/blog/blog-grid/pic4.jpg' %}" alt=""></a>
+								<ul class="dz-badge-list">
+									<li><a href="javascript:void(0);" class="dz-badge">DESIGN</a></li>
+								</ul>
+								<a href="{% url 'activity' 'slug' %}" class="btn btn-secondary">{% if language == 'en' %}Read More{% else %}Mehr Lesen{% endif %}</a>
+							</div>
+							<div class="dz-info">
+								<h5 class="dz-title"><a href="{% url 'activity' 'slug' %}">New vaccine for cattle calf loss learned </a></h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
+
+								<div class="author-wrappper">
+									<div class="author-content">
+										<div class="author-head">
+											<h6 class="author-name">Hawkins Junior</h6>
+										</div>
+										<ul class="author-meta">
+											<li class="date">November 21th, 2022</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="dz-card style-1 blog-half">
+							<div class="dz-media">
+								<a href="{% url 'activity' 'slug' %}"><img src="{% static 'images/blog/blog-grid/pic4.jpg' %}" alt=""></a>
+								<a href="{% url 'activity' 'slug' %}" class="btn btn-secondary">{% if language == 'en' %}Read More{% else %}Mehr Lesen{% endif %}</a>
+							</div>
+							<div class="dz-info">
+								<h5 class="dz-title"><a href="{% url 'activity' 'slug' %}">Partnering to create a community</a></h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
+
+								<div class="author-wrappper">
+									<div class="author-content">
+										<div class="author-head">
+											<h6 class="author-name">Hawkins Junior</h6>
+										</div>
+										<ul class="author-meta">
+											<li class="date">November 21th, 2022</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 m-sm-t0 m-t30 m-b15">
+							<nav aria-label="Blog Pagination" class="pagination-bx">
+								<div class="page-item">
+									<a class="page-link prev" href="javascript:void(0);"><i class="fas fa-chevron-left"></i></a>
+								</div>
+								<ul class="pagination">
+									<li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+									<li class="page-item"><a class="page-link active" href="javascript:void(0);">2</a></li>
+									<li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+									<li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+								</ul>
+								<div class="page-item">
+									<a class="page-link next" href="javascript:void(0);"><i class="fas fa-chevron-right"></i></a>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+				{% comment %} <div class="col-xl-4 col-lg-4">
+					<aside class="side-bar sticky-top right">
+						<div class="widget style-1">
+							<div class="widget-title">
+								<h4 class="title">{% if language == 'en' %}Search{% else %}Suchen{% endif %}</h4>
+							</div>
+							<div class="search-bx">
+								<form role="search" method="post">
+									<div class="input-group">
+										<input name="text" class="form-control" placeholder="{% if language == 'en' %}Search Here...{% else %}Suche hier...{% endif %}" type="text">
+										<span class="input-group-btn">
+											<button type="submit" class="btn btn-primary sharp radius-no"><i class="la la-search scale3"></i></button>
+										</span>
+									</div>
+								<input name="__RequestVerificationToken" type="hidden" value="CfDJ8G0bnAtVeTdLgK-RoHhPIqJoazgvfeCzepTMZfOnwci0pHxDxLh8hwsvC3OYkxxyhBUEtDL_5RRklCVgiLWMPe97-8UKpKzVLJaJl6U4Pt6_0Q4OV-XKIwUZs11NxfDwmyZZQXMkGZrnKqnFj-ukvRo" /></form>
+							</div>
+						</div>
+
+						<div class="widget style-1 widget_categories">
+							<div class="widget-title">
+								<h4 class="title">{% if language == 'en' %}Category{% else %}Kategorie{% endif %}</h4>
+							</div>
+							<ul>
+								<li class="cat-item"><a href="javascript:void(0);">Software</a></li>
+								<li class="cat-item"><a href="javascript:void(0);">Analysis</a></li>
+								<li class="cat-item"><a href="javascript:void(0);">Cryptocurrency</a></li>
+								<li class="cat-item"><a href="javascript:void(0);">Technology</a></li>
+								<li class="cat-item"><a href="javascript:void(0);">Mobile App</a></li>
+								<li class="cat-item"><a href="javascript:void(0);">Development</a></li>
+							</ul>
+						</div>
+
+						<div class="widget style-1 widget_tag_cloud">
+							<div class="widget-title">
+								<h4 class="title">{% if language == 'en' %}Popular Tags{% else %}Beliebte Tags{% endif %}</h4>
+							</div>
+							<div class="tagcloud">
+								<a href="javascript:void(0);">Mock-Ups</a>
+								<a href="javascript:void(0);">UI</a>
+								<a href="javascript:void(0);">Websites</a>
+								<a href="javascript:void(0);">PSD Templates</a>
+								<a href="javascript:void(0);">Branding</a>
+								<a href="javascript:void(0);">WordPress</a>
+								<a href="javascript:void(0);">Graphic Design</a>
+								<a href="javascript:void(0);">UI Kit</a>
+								<a href="javascript:void(0);">Development</a>
+							</div>
+						</div>
+
+					</aside>
+				</div> {% endcomment %}
+			</div>
+		</div>
+	</section>
+</div>
+
+
+<!-- Footer -->
+<footer class="site-footer style-1" id="footer">
+	<!-- Footer Bottom Part -->
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="text-center">
+				<div class="copyright-text">Copyright © 2024 <a href="https://inclusiondisabledpeople.com/" target="_blank">Inclusion</a>. All rights reserved.</div>
+				<div class="web-author">Design &amp; Code: <a href="https://ozkanyazilim.com" target="_blank">Ozki</a></div>
+				<div class="dz-social-icon style-1">
+					<ul>
+						<li><a target="_blank" class="fab fa-facebook-f" href="https://www.facebook.com/"></a></li>
+						<li><a target="_blank" class="fab fa-instagram" href="https://www.instagram.com/"></a></li>
+						<li><a target="_blank" class="fab fa-twitter" href="https://twitter.com/"></a></li>
+						<li><a target="_blank" class="fab fa-youtube" href="https://youtube.com/"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- Footer End -->
+
+<button class="scroltop icon-up" type="button"><i class="fas fa-arrow-up"></i></button>
+{% endblock content %}
+				
