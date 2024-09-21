@@ -23,7 +23,7 @@ def Activities(request):
     context = {
         "language": lang,
     }
-    return render(request, "web/blog.html", context)
+    return render(request, "web/activities.html", context)
 
 
 def Activity(request, slug=""):
@@ -31,7 +31,7 @@ def Activity(request, slug=""):
     context = {
         "language": lang,
     }
-    return render(request, "web/blogdetails.html", context)
+    return render(request, "web/activity_detail.html", context)
 
 
 def Contact(request):

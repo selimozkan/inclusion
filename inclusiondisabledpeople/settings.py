@@ -117,6 +117,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CKEDITOR_CONFIGS = {
     "default": {
+        "versionCheck": False,
         "skin": "moono",
         "height": 200,
         "width": "100%",
