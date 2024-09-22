@@ -8,7 +8,6 @@ admin.site.site_header = "Inclusion Disabled People Admin Panel"
 
 
 class GeneralAdmin(admin.ModelAdmin):
-    fields = ("__all__",)
     list_display = (
         "header_text_en",
         "email",
@@ -126,11 +125,7 @@ admin.site.register(Activity, ActivityAdmin)
 
 
 class ContactAdmin(admin.ModelAdmin):
-    fields = ("__all__",)
-    list_display = (
-        "phone",
-        "email",
-    )
+    list_display = [field.name for field in Contact._meta.fields if field.name]
 
     def has_add_permission(self, request):
         count = Contact.objects.all().count()

@@ -136,66 +136,6 @@
 		<img src="{% static 'images/pattern/shape6.png' %}" class="shape-2 rotating" alt="shape">
 	</section>
 	<!-- Our Blog End  -->
-	<!-- Partners -->
-	<section class="clients-wrapper wow fadeInUp" data-wow-delay="0.2s">
-		<div class="container">
-			<div class="section-head text-center">
-				<h4 class="title">{% if language == 'en' %}Our Partners{% else %}Unsere Partner{% endif %}</h4>
-			</div>
-			<div class="swiper clients-swiper">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="clients-logo">
-							<img class="logo-main" src="{% static 'images/clients-logo/logo1.png' %}" alt="">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="clients-logo">
-							<img class="logo-main" src="{% static 'images/clients-logo/logo2.png' %}" alt="">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="clients-logo">
-							<img class="logo-main" src="{% static 'images/clients-logo/logo3.png' %}" alt="">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="clients-logo">
-							<img class="logo-main" src="{% static 'images/clients-logo/logo4.png' %}" alt="">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="clients-logo">
-							<img class="logo-main" src="{% static 'images/clients-logo/logo5.png' %}" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Partners -->
+	{% include 'web/partners.html' %}
 </div>
-        <!-- Footer -->
-<footer class="site-footer style-1" id="footer">
-	<!-- Footer Bottom Part -->
-	<div class="footer-bottom">
-		<div class="container">
-			<div class="text-center">
-				<div class="copyright-text">Copyright © 2024 <a href="https://inclusiondisabledpeople.com/" target="_blank">Inclusion</a>. All rights reserved.</div>
-				<div class="web-author">Design &amp; Code: <a href="https://ozkanyazilim.com" target="_blank">Ozki</a></div>
-				<div class="dz-social-icon style-1">
-					<ul>
-						<li><a target="_blank" class="fab fa-facebook-f" href="https://www.facebook.com/"></a></li>
-						<li><a target="_blank" class="fab fa-instagram" href="https://www.instagram.com/"></a></li>
-						<li><a target="_blank" class="fab fa-twitter" href="https://twitter.com/"></a></li>
-						<li><a target="_blank" class="fab fa-youtube" href="https://youtube.com/"></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-<!-- Footer End -->
-
-<button class="scroltop icon-up" type="button"><i class="fas fa-arrow-up"></i></button>
 {% endblock content %}

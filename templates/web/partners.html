@@ -1,0 +1,21 @@
+	{% load static %}
+	<!-- Partner-logo -->
+	<section class="clients-wrapper pb-5">
+		<div class="container">
+			<div class="section-head text-center">
+				<h3 class="title">{% if language == 'en' %}Our Partners{% else %}Unsere Partner{% endif %}</h3>
+			</div>
+			<div class="swiper clients-swiper">
+				<div class="swiper-wrapper">
+					{% for partner in partners  %}
+					<div class="swiper-slide">
+						<div class="clients-logo">
+							<img class="logo-main" src="/media/{{ partner.logo }}" alt="{{ partner.title }}">
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Partner-logo-end -->

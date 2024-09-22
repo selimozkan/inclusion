@@ -8,12 +8,12 @@
 	<div class="dz-bnr-inr dz-bnr-inr-sm style-1 text-center overlay-primary-dark" style="background-image:url('{% static 'images/banner/bnr4.jpg' %}');">
 		<div class="container">
 			<div class="dz-bnr-inr-entry">
-				<h1>Blog</h1>
+				<h1>{% if language == 'en' %}Activities{% else %}Aktivitäten{% endif %}</h1>
 				<!-- Breadcrumb Row -->
 				<nav aria-label="breadcrumb" class="breadcrumb-row">
 					<ul class="breadcrumb">
 						<li class="breadcrumb-item"><a href="{% url 'index' %}">{% if language == 'en' %}Home{% else %}Hauptseite{% endif %}</a></li>
-						<li class="breadcrumb-item active" aria-current="page">{% if language == 'en' %}Blog Grid{% else %}Blog Grid{% endif %}</li>
+						<li class="breadcrumb-item active" aria-current="page">{% if language == 'en' %}Activities{% else %}Aktivitäten{% endif %}</li>
 					</ul>
 				</nav>
 				<!-- Breadcrumb Row End -->
@@ -24,175 +24,95 @@
 	<section class="content-inner-1">
 		<div class="container">
 			<div class="row">
+				
+				{% for item in object_list %}
 				<div class="col-xl-4 col-md-6 m-b30">
 					<div class="dz-card style-1">
 						<div class="dz-media">
-							<a href="{% url 'activity' 'slug' %}"><img src="{% static 'images/blog/blog-grid/pic4.jpg' %}" alt=""></a>
-							<a href="{% url 'activity' 'slug' %}" class="btn btn-secondary">Read More</a>
+							<a href="{{ item.get_absolute_url }}"><img src="/media/{{ item.image }}" alt=""></a>
+							<a href="{{ item.get_absolute_url }}" class="btn btn-secondary">
+							{% if language == 'en' %}
+								Read More
+							{% else %}
+								Mehr Lesen
+							{% endif %}
+							</a>
 						</div>
 						<div class="dz-info">
-							<h5 class="dz-title"><a href="{% url 'activity' 'slug' %}">New vaccine for cattle calf loss learned </a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
+							<h5 class="dz-title">
+								<a href="{{ item.get_absolute_url }}">
+								{% if language == 'en' %}
+									{{ item.title_en | safe }}
+								{% else %}
+									{{ item.title_ge | safe }}
+								{% endif %}
+								</a>
+							</h5>
+							<p>
+							{% if language == 'en' %}
+								{{ item.description_en | safe}}
+							{% else %}
+								{{ item.description_ge | safe }}
+							{% endif %}
+							</p>
 
 							<div class="author-wrappper">
 								<div class="author-content">
 									<div class="author-head">
-										<h6 class="author-name">Hawkins Junior</h6>
+										<h6 class="author-name">{{ item.author }}</h6>
 									</div>
 									<ul class="author-meta">
-										<li class="date">November 21th, 2022</li>
+										<li class="date">
+										{% if item.updated_on %}
+											{{ item.updated_on }}
+										{% else %}
+											{{ item.created_on }}
+										{% endif %}
+											</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 col-md-6 m-b30">
-					<div class="dz-card style-1">
-						<div class="dz-media">
-							<a href="{% url 'activity' 'slug' %}"><img src="{% static 'images/blog/blog-grid/pic3.jpg' %}" alt=""></a>
-							<a href="{% url 'activity' 'slug' %}" class="btn btn-secondary">Read More</a>
-						</div>
-						<div class="dz-info">
-							<h5 class="dz-title"><a href="{% url 'activity' 'slug' %}">4 Things parents learned for they jids in 2020 </a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
-
-							<div class="author-wrappper">
-								<div class="author-content">
-									<div class="author-head">
-										<h6 class="author-name">Tom wilson</h6>
-									</div>
-									<ul class="author-meta">
-										<li class="date">November 21th, 2022</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-md-6 m-b30">
-					<div class="dz-card style-1">
-						<div class="dz-media">
-							<a href="{% url 'activity' 'slug' %}"><img src="{% static 'images/blog/blog-grid/pic2.jpg' %}" alt=""></a>
-							<a href="{% url 'activity' 'slug' %}" class="btn btn-secondary">Read More</a>
-						</div>
-						<div class="dz-info">
-							<h5 class="dz-title"><a href="{% url 'activity' 'slug' %}">He Created the Web. Now He’s Out to Remake </a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
-
-							<div class="author-wrappper">
-								<div class="author-content">
-									<div class="author-head">
-										<h6 class="author-name">Adam Jordon</h6>
-									</div>
-									<ul class="author-meta">
-										<li class="date">November 21th, 2022</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-md-6 m-b30">
-					<div class="dz-card style-1">
-						<div class="dz-media">
-							<a href="{% url 'activity' 'slug' %}"><img src="{% static 'images/blog/blog-grid/pic5.jpg' %}" alt=""></a>
-							<a href="{% url 'activity' 'slug' %}" class="btn btn-secondary">Read More</a>
-						</div>
-						<div class="dz-info">
-							<h5 class="dz-title"><a href="{% url 'activity' 'slug' %}">Partnering to create a community</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
-
-							<div class="author-wrappper">
-								<div class="author-content">
-									<div class="author-head">
-										<h6 class="author-name">Kaylynn Donin</h6>
-									</div>
-									<ul class="author-meta">
-										<li class="date">November 21th, 2022</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-md-6 m-b30">
-					<div class="dz-card style-1">
-						<div class="dz-media">
-							<a href="{% url 'activity' 'slug' %}"><img src="{% static 'images/blog/blog-grid/pic6.jpg' %}" alt=""></a>
-							<a href="{% url 'activity' 'slug' %}" class="btn btn-secondary">Read More</a>
-						</div>
-						<div class="dz-info">
-							<h5 class="dz-title"><a href="{% url 'activity' 'slug' %}">Primary School Build for Children</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
-
-							<div class="author-wrappper">
-								<div class="author-content">
-									<div class="author-head">
-										<h6 class="author-name">Richard Hartisona</h6>
-									</div>
-									<ul class="author-meta">
-										<li class="date">November 21th, 2022</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-md-6 m-b30">
-					<div class="dz-card style-1">
-						<div class="dz-media">
-							<a href="{% url 'activity' 'slug' %}"><img src="{% static 'images/blog/blog-grid/pic7.jpg' %}" alt=""></a>
-							<a href="{% url 'activity' 'slug' %}" class="btn btn-secondary">Read More</a>
-						</div>
-						<div class="dz-info">
-							<h5 class="dz-title"><a href="{% url 'activity' 'slug' %}">Best & Less published their supplier lists</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
-
-							<div class="author-wrappper">
-								<div class="author-content">
-									<div class="author-head">
-										<h6 class="author-name">Cheyenne Curtis</h6>
-									</div>
-									<ul class="author-meta">
-										<li class="date">November 21th, 2022</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+				{% endfor %}
+			<!-- Blog Pagination -->
 			<div class="row">
 				<div class="col-12 m-sm-t0 m-t30">
 					<nav aria-label="Blog Pagination" class="pagination-bx">
 						<div class="page-item">
-							<a class="page-link prev" href="javascript:void(0);"><i class="fas fa-chevron-left"></i></a>
+							{% if page_obj.has_previous %}
+							<a class="page-link prev" href="?page={{ page_obj.previous_page_number }}"><i class="fas fa-chevron-left"></i></a>
+							{% else %}
+							<a class="page-link prev" style="cursor: not-allowed;" href="javascript:void(0);"><i class="fas fa-chevron-left"></i></a>
+							{% endif %}
 						</div>
 						<ul class="pagination">
-							<li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
-							<li class="page-item"><a class="page-link active" href="javascript:void(0);">2</a></li>
-							<li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-							<li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+							{% for num in page_obj.paginator.page_range %}
+							<li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+							{% endfor %}
 						</ul>
 						<div class="page-item">
-							<a class="page-link next" href="javascript:void(0);"><i class="fas fa-chevron-right"></i></a>
+							{% if page_obj.has_next %}
+							<a class="page-link next" href="?page={{ page_obj.next_page_number }}"><i class="fas fa-chevron-right"></i></a>
+							{% else %}
+							<a class="page-link next" style="cursor: not-allowed;" href="javascript:void(0);"><i class="fas fa-chevron-right"></i></a>
+							{% endif %}
 						</div>
 					</nav>
 				</div>
 			</div>
+			<!-- Blog Pagination End -->
 		</div>
 	</section>
-
 </div>
-
 
 <footer class="site-footer style-1" id="footer">
 	<!-- Footer Bottom Part -->
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="text-center">
-				<div class="copyright-text">Copyright © 2024 <a href="https://inclusiondisabledpeople.com/" target="_blank">Inclusion</a>. All rights reserved.</div>
+				<div class="copyright-text">Copyright © 2024 <a href="https://inclusiondisabledpeople.com/">Inclusion</a>. All rights reserved.</div>
 				<div class="web-author">Design &amp; Code: <a href="https://ozkanyazilim.com" target="_blank">Ozki</a></div>
 				<div class="dz-social-icon style-1">
 					<ul>

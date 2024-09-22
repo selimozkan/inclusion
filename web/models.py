@@ -3,6 +3,8 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from ckeditor.fields import RichTextField
 from django.template.defaultfilters import slugify
 from django.core.validators import FileExtensionValidator, URLValidator
+from django.utils.safestring import mark_safe
+from django.urls import reverse
 
 
 class General(models.Model):
@@ -195,6 +197,15 @@ class About(models.Model):
         return self.title_en
 
 
+def create_slug(title):  # new
+    slug = slugify(title)
+    qs = Activity.objects.filter(slug=slug)
+    exists = qs.exists()
+    if exists:
+        slug = "%s-%s" % (slug, qs.first().id)
+    return slug
+
+
 class Activity(models.Model):
     image = models.ImageField(upload_to="activity/", null=True, blank=True)
     title_en = models.CharField(max_length=150, null=True, blank=True)
@@ -240,13 +251,8 @@ class Activity(models.Model):
         return reverse("activity", kwargs={"slug": self.slug})
 
     def save(self, *args, **kwargs):  # new
-        if not self.slug:
-            slug = slugify(self.title_en)
-            qs = Activity.objects.filter(slug=slug)
-            exists = qs.exists()
-            if exists:
-                slug = "%s-%s" % (slug, qs.first().id)
-        self.slug = slug
+        # if not self.slug:
+        self.slug = create_slug(self.title_en)
         return super().save(*args, **kwargs)
 
     def __str__(self):
@@ -254,7 +260,7 @@ class Activity(models.Model):
 
 
 class Contact(models.Model):
-    phone = models.TextField(max_length=20, blank=True, null=True)
+    phone = models.CharField(max_length=20, blank=True, null=True)
     email = models.EmailField(max_length=254, blank=True, null=True)
     address = models.TextField(blank=True, null=True)
     map_link = models.TextField(blank=True, null=True)

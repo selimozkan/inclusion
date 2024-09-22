@@ -6,10 +6,10 @@
 	<section class="content-inner-2">
 		<div class="container">
 			<div class="row ">
-				<div class="col-xl-8 col-lg-8 m-b30">
+				<div class="col-xl-12 col-lg-12 m-b30">
 					<div class="dz-card blog-single sidebar">
 						<div class="dz-media">
-							<img src="../assets/images/blog/large/pic1.jpg" alt="">
+							<img src="{% static 'images/blog/large/pic1.jpg' %}" alt="">
 						</div>
 						<div class="dz-info">
 							<div class="dz-meta">
@@ -22,8 +22,8 @@
 								<h1 class="dz-title">When Professionals Run Into Problems With Agency</h1>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce venenatis, tortor in varius lobortis, sapien arcu ornare nisi, ut volutpat ante augue quis arcu. Phasellus lacinia magna elit, at maximus leo tristique non. Phasellus laoreet, nisi quis fermentum blandit, leo dolor bibendum arcu, vel dignissim diam odio a elit. In dapibus congue urna vitae porta. Quisque tincidunt velit sed ullamcorper pretium. Nullam vitae luctus libero.</p>
 								<ul class="wp-block-gallery columns-3">
-									<li class="blocks-gallery-item"><img alt="" src="../assets/images/blog/blog-grid/pic2.jpg"></li>
-									<li class="blocks-gallery-item"><img alt="" src="../assets/images/blog/blog-grid/pic1.jpg"></li>
+									<li class="blocks-gallery-item"><img alt="" src="{% static 'images/blog/blog-grid/pic2.jpg' %}"></li>
+									<li class="blocks-gallery-item"><img alt="" src="{% static 'images/blog/blog-grid/pic1.jpg' %}"></li>
 								</ul>
 								<p>Vestibulum porttitor purus commodo sagittis molestie. Fusce facilisis ipsum ut tincidunt suscipit. Vivamus tristique lectus quis dignissim convallis. Cras eget ipsum bibendum, feugiat libero in, scelerisque erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
 								<blockquote class="block-quote style-1">
@@ -43,180 +43,10 @@
 						</div>
 					</div>
 
-					<!-- Author Box -->
-					<div class="author-box blog-user m-b60">
-						<div class="author-profile-info">
-							<div class="author-profile-content">
-								<h4>Jake Johnson</h4>
-								<p>We were making our way to the Rila Mountains, where we were visiting the Rila Monastery where we enjoyed.</p>
-								<ul class="list-inline m-b0">
-									<li>
-										<a href="https://www.facebook.com/" target="_blank" class="btn-link">
-											<i class="fab fa-facebook-f"></i>
-										</a>
-									</li>
-									<li>
-										<a href="https://www.twitter.com/" target="_blank" class="btn-link">
-											<i class="fab fa-twitter"></i>
-										</a>
-									</li>
-									<li>
-										<a href="https://www.google.com/" target="_blank" class="btn-link">
-											<i class="fab fa-google-plus"></i>
-										</a>
-									</li>
-									<li>
-										<a href="https://www.youtube.com/" target="_blank" class="btn-link">
-											<i class="fab fa-youtube"></i>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-4">
-					<aside class="side-bar sticky-top">
-						<!-- Search Bx -->
-						<div class="widget style-1">
-							<div class="widget-title">
-								<h5 class="title">Search</h5>
-							</div>
-							<div class="search-bx">
-								<form role="search" method="post">
-									<div class="input-group">
-										<input name="text" class="form-control" placeholder="Search Here..." type="text">
-										<span class="input-group-btn">
-											<button type="submit" class="btn btn-primary sharp radius-no"><i class="la la-search scale3"></i></button>
-										</span>
-									</div>
-								<input name="__RequestVerificationToken" type="hidden" value="CfDJ8G0bnAtVeTdLgK-RoHhPIqJUmpqZjmZ2kgX90FMvM46u4OSlSsiO9KOU7mPBu3T3P_rLQ2FgzkDHvYXWDkcd02PTbvkvWd5xgqUKcseZcEB8n53fbJ5uYIjj7wWE33NjNIPlyhfSemYrzaVqKkhw7Ds" /></form>
-							</div>
-						</div>
-
-						<!-- Categories -->
-						<div class="widget style-1 widget_categories">
-							<div class="widget-title">
-								<h5 class="title">Categories</h5>
-							</div>
-							<ul>
-								<li class="cat-item"><a href="javascript:void(0);">business (10)</a></li>
-								<li class="cat-item"><a href="javascript:void(0);">Case Study (13)</a></li>
-								<li class="cat-item"><a href="javascript:void(0);">Insights (9)</a></li>
-								<li class="cat-item"><a href="javascript:void(0);">World (3)</a></li>
-								<li class="cat-item"><a href="javascript:void(0);">Tax Solutions (12)</a></li>
-								<li class="cat-item"><a href="javascript:void(0);">Creative (6)</a></li>
-							</ul>
-						</div>
-
-						<!-- Recent Posts -->
-						<div class="widget style-1 recent-posts-entry">
-							<div class="widget-title">
-								<h5 class="title">Recent Post</h5>
-							</div>
-							<div class="widget-post-bx">
-								<div class="widget-post clearfix">
-									<div class="dz-media">
-										<img src="../assets/images/blog/recent-blog/pic1.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<h6 class="title"><a href="{% url 'activity_detail' %}">New vaccine for cattle calf loss learned.</a></h6>
-										<div class="dz-meta">
-											<ul>
-												<li class="post-date"><i class="fa-solid fa-calendar-days"></i> 7 March, 2022</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="widget-post clearfix">
-									<div class="dz-media">
-										<img src="../assets/images/blog/recent-blog/pic2.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<h6 class="title"><a href="{% url 'activity_detail' %}">He Created the Web. Now He’s Out to Remake.</a></h6>
-										<div class="dz-meta">
-											<ul>
-												<li class="post-date"><i class="fa-solid fa-calendar-days"></i> 7 March, 2022</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="widget-post clearfix">
-									<div class="dz-media">
-										<img src="../assets/images/blog/recent-blog/pic3.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<h6 class="title"><a href="{% url 'activity_detail' %}">Partnering to create a community.</a></h6>
-										<div class="dz-meta">
-											<ul>
-												<li class="post-date"><i class="fa-solid fa-calendar-days"></i> 7 March, 2022</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="widget-post clearfix">
-									<div class="dz-media">
-										<img src="../assets/images/blog/recent-blog/pic4.jpg" alt="">
-									</div>
-									<div class="dz-info">
-										<h6 class="title"><a href="{% url 'activity_detail' %}">Best & Less published their supplier lists.</a></h6>
-										<div class="dz-meta">
-											<ul>
-												<li class="post-date"><i class="fa-solid fa-calendar-days"></i> 7 March, 2022</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Tag Cloud -->
-						<div class="widget style-1 widget_tag_cloud">
-							<div class="widget-title">
-								<h5 class="title">Popular Tags</h5>
-							</div>
-							<div class="tagcloud">
-								<a href="javascript:void(0);">Business</a>
-								<a href="javascript:void(0);">Corporate</a>
-								<a href="javascript:void(0);">Blog</a>
-								<a href="javascript:void(0);">Marketing</a>
-								<a href="javascript:void(0);">Creative</a>
-								<a href="javascript:void(0);">Web</a>
-								<a href="javascript:void(0);">Workers</a>
-								<a href="javascript:void(0);">Modern</a>
-							</div>
-						</div>
-
-					</aside>
 				</div>
 			</div>
 		</div>
 	</section>
 </div>
-
-
-<!-- Footer -->
-<footer class="site-footer style-1" id="footer">
-	<!-- Footer Bottom Part -->
-	<div class="footer-bottom">
-		<div class="container">
-			<div class="text-center">
-				<div class="copyright-text">Copyright © 2024 <a href="https://inclusiondisabledpeople.com/" target="_blank">Inclusion</a>. All rights reserved.</div>
-				<div class="web-author">Design &amp; Code: <a href="https://ozkanyazilim.com" target="_blank">Ozki</a></div>
-				<div class="dz-social-icon style-1">
-					<ul>
-						<li><a target="_blank" class="fab fa-facebook-f" href="https://www.facebook.com/"></a></li>
-						<li><a target="_blank" class="fab fa-instagram" href="https://www.instagram.com/"></a></li>
-						<li><a target="_blank" class="fab fa-twitter" href="https://twitter.com/"></a></li>
-						<li><a target="_blank" class="fab fa-youtube" href="https://youtube.com/"></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-<!-- Footer End -->
-
-<button class="scroltop icon-up" type="button"><i class="fas fa-arrow-up"></i></button>
 {% endblock content %}
 				
