@@ -95,6 +95,7 @@ class AboutAdmin(admin.ModelAdmin):
 admin.site.register(About, AboutAdmin)
 
 
+@admin.register(Activity)
 class ActivityAdmin(admin.ModelAdmin):
     fields = (
         "activity_image",
@@ -117,11 +118,13 @@ class ActivityAdmin(admin.ModelAdmin):
         "created_on",
         "updated_on",
     )
-    readonly_fields = ("activity_image", "slug", "created_on", "updated_on")
+    readonly_fields = (
+        "activity_image",
+        "slug",
+        "created_on",
+        "updated_on",
+    )
     ordering = ("-created_on", "-updated_on")
-
-
-admin.site.register(Activity, ActivityAdmin)
 
 
 class ContactAdmin(admin.ModelAdmin):

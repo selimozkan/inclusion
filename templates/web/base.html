@@ -69,18 +69,14 @@
             <div class="dz-topbar-left">
               <ul>
                 <li>
-                {% if language == 'en' %}
-                Welcome to Inclusion Disabled People KA210-SSP Erasmus+ Web Site
-                {% else %}
-                Willkommen auf der Erasmus+ Website für Inklusion Behinderter Menschen KA210-SSP  
-                {% endif %}
+                {% if language == 'en' %}{{ general.header_text_en }}{% else %}{{ general.header_text_ge }}{% endif %}
                 </li>
               </ul>
             </div>
             <div class="dz-topbar-right">
               <ul>
-                <li><i class="fas fa-phone"></i>+49 (178) 977-01-42</li>
-                <li><i class="fas fa-envelope"></i>erasmus@forumjugend.do</li>
+                <li><i class="fas fa-phone"></i>{{ contact.phone }}</li>
+                <li><i class="fas fa-envelope"></i>{{ general.email }}</li>
               </ul>
             </div>
           </div>
@@ -125,10 +121,23 @@
                 </a> {% endcomment %}
                 <div class="dz-social-icon">
                   <ul>
-                    <li><a class="fab fa-facebook-f" href="https://www.facebook.com/"></a></li>
-                    <li><a class="fab fa-instagram" href="https://www.instagram.com/"></a></li>
-                    <li><a class="fab fa-twitter" href="https://twitter.com/"></a></li>
-                    <li><a class="fab fa-youtube" href="https://www.youtube.com/"></a></li>
+                    
+                    {% if general.facebook_url %}
+                    <li><a class="fab fa-facebook-f" href="{{ general.facebook_url }}"></a></li>
+                    {% endif %}
+                    
+                    {% if general.instagram_url %}
+                    <li><a class="fab fa-instagram" href="{{ general.instagram_url }}"></a></li>
+                    {% endif %}
+                    
+                    {% if general.twitter_url %}
+                    <li><a class="fab fa-twitter" href="{{ general.twitter_url }}"></a></li>
+                    {% endif %}
+                    
+                    {% if general.youtube_url %}
+                    <li><a class="fab fa-youtube" href="{{ general.youtube_url }}"></a></li>
+                    {% endif %}
+                                                                    
                   </ul>
                 </div>
               </div>
@@ -155,11 +164,22 @@
             <div class="web-author">Design &amp; Code: <a href="https://ozkanyazilim.com" target="_blank">Ozki</a></div>
             <div class="dz-social-icon style-1">
               <ul>
-                {% comment %} <li><a target="_blank" class="fab fa-facebook-f" href="https://www.facebook.com/"></a></li> {% endcomment %}
-                <li><a target="_blank" class="fab fa-instagram" href="https://www.instagram.com/forumjugend/"></a></li>
-                {% comment %} <li><a target="_blank" class="fab fa-twitter" href="https://twitter.com/"></a></li> {% endcomment %}
-                {% comment %} <li><a target="_blank" class="fab fa-youtube" href="https://youtube.com/"></a></li> {% endcomment %}
-              </ul>
+                {% if general.facebook_url %}
+                <li><a class="fab fa-facebook-f" href="{{ general.facebook_url}}"></a></li>
+                {% endif %}
+                
+                {% if general.instagram_url %}
+                <li><a class="fab fa-instagram" href="{{ general.instagram_url }}"></a></li>
+                {% endif %}
+                
+                {% if general.twitter_url %}
+                <li><a class="fab fa-twitter" href="{{ general.twitter_url }}"></a></li>
+                {% endif %}
+                
+                {% if general.youtube_url %}
+                <li><a class="fab fa-youtube" href="{{ general.youtube_url }}"></a></li>
+                {% endif %}
+          </ul>
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ from .models import *
 def Index(request):
     lang = request.session.get("language", "en")
     partners = Partner.objects.all()
+
     context = {
         "language": lang,
         "partners": partners,
