@@ -13,22 +13,28 @@
 						{% if language == 'en' %}Welcome{% else %}Willkommen{% endif %}
 						</h5>
 						<h1 class="title">
-							We help for Inclusion of Disabled People
-						</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
-						<a href="{% url 'about' %}" class="btn btn-secondary btnhover2 m-r15">
 							{% if language == 'en' %}
-								Learn More
+								{{ home.welcome_title_en }}
 							{% else %}
-								Mehr erfahren
+								{{ home.welcome_title_ge }}
 							{% endif %}
+						</h1>
+						<p>
+						{% if language == 'en' %}
+							{{ home.welcome_description_en }}
+						{% else %}
+							{{ home.welcome_description_ge }}
+						{% endif %}
+						</p>
+						<a href="{% url 'about' %}" class="btn btn-secondary btnhover2 m-r15">
+							{% if language == 'en' %}Learn More{% else %}Mehr erfahren{% endif %}
 							<i class="flaticon-right-arrows ms-3 scale1"></i>
 						</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-5">
 					<div class="banner-media">
-						<img src="{% static 'images/main-slider/pic1.png' %}" class="main-img" alt="">
+						<img src="{{ home.welcome_image.url }}" class="main-img" alt="{{ home.welcome_title_en }}">
 						<div class="dz-media">
 						</div>
 					</div>
@@ -43,84 +49,65 @@
 		</div>
 	</div>
 	<!-- Banner End -->
-	<!-- Our Blog  -->
+	<!-- Latest Activities  -->
 	<section class="content-inner-2 section-pattren1">
 		<div class="container">
 			<div class="section-head text-center wow fadeInUp" data-wow-delay="0.2s">
-				<h2 class="title">Latest Activities</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				<h2 class="title">
+					{% if language == 'en' %}
+					{{ home.activities_title_en }}
+					{% else %}
+					{{ home.activities_title_ge }}
+					{% endif %}
+				</h2>
+				<p>
+					{% if language == 'en' %}
+					{{ home.activities_description_en }}
+					{% else %}
+					{{ home.activities_description_ge }}
+					{% endif %}
+				</p>
 			</div>
 			<div class="swiper blog-slider-full">
 				<div class="swiper-wrapper m-b5">
+
+					{% for activity in activities  %}
 					<div class="swiper-slide">
 						<div class="dz-card style-1 wow fadeInUp" data-wow-delay="0.2s">
 							<div class="dz-media">
-								<a href="{% url 'activity' 'slug' %}"><img src="{% static 'images/blog/blog-grid/pic4.jpg' %}" alt=""></a>
-								<a href="{% url 'activity' 'slug' %}" class="btn btn-secondary">Read More</a>
+								<a href="{% url 'activity' activity.slug %}"><img src="{{ activity.image.url }}" alt="{{ activity.title_en }}"></a>
+								<a href="{% url 'activity' activity.slug %}" class="btn btn-secondary">{% if language == 'en' %}Learn More{% else %}Mehr erfahren{% endif %}</a>
 							</div>
 							<div class="dz-info">
-								<h5 class="dz-title"><a href="{% url 'activity' 'slug' %}">New vaccine for cattle calf loss learned </a></h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
+								<h5 class="dz-title"><a href="{% url 'activity' activity.slug %}">
+								{% if language == 'en' %}
+									{{ activity.title_en | safe }}
+								{% else %}
+									{{ activity.title_ge | safe }}
+								{% endif %}
+								</a></h5>
+								<p>
+								{% if language == 'en' %}
+									{{ activity.description_en | safe }}
+								{% else %}
+									{{ activity.description_ge | safe }}
+								{% endif %}
+								</p>
 
 								<div class="author-wrappper">
 									<div class="author-content">
 										<div class="author-head">
-											<h6 class="author-name">Hawkins Junior</h6>
+											<h6 class="author-name">{{ activity.author }}</h6>
 										</div>
 										<ul class="author-meta">
-											<li class="date">November 21th, 2022</li>
+											<li class="date">{{ activity.updated_on | date:"d.m.Y"}}</li>
 										</ul>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="swiper-slide">
-						<div class="dz-card style-1 wow fadeInUp" data-wow-delay="0.4s">
-							<div class="dz-media">
-								<a href="{% url 'activity' 'slug' %}"><img src="{% static 'images/blog/blog-grid/pic3.jpg' %}" alt=""></a>
-								<a href="{% url 'activity' 'slug' %}" class="btn btn-secondary">Read More</a>
-							</div>
-							<div class="dz-info">
-								<h5 class="dz-title"><a href="{% url 'activity' 'slug' %}">4 Things parents learned for they jids in 2020 </a></h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
-
-								<div class="author-wrappper">
-									<div class="author-content">
-										<div class="author-head">
-											<h6 class="author-name">Tom wilson</h6>
-										</div>
-										<ul class="author-meta">
-											<li class="date">November 21th, 2022</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="dz-card style-1 wow fadeInUp" data-wow-delay="0.6s">
-							<div class="dz-media">
-								<a href="{% url 'activity' 'slug' %}"><img src="{% static 'images/blog/blog-grid/pic2.jpg' %}" alt=""></a>
-								<a href="{% url 'activity' 'slug' %}" class="btn btn-secondary">Read More</a>
-							</div>
-							<div class="dz-info">
-								<h5 class="dz-title"><a href="{% url 'activity' 'slug' %}">He Created the Web. Now He’s Out to Remake </a></h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
-
-								<div class="author-wrappper">
-									<div class="author-content">
-										<div class="author-head">
-											<h6 class="author-name">Adam Jordon</h6>
-										</div>
-										<ul class="author-meta">
-											<li class="date">November 21th, 2022</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					{% endfor %}
 				</div>
 			</div>
 		</div>
@@ -131,7 +118,7 @@
 		<img src="{% static 'images/pattern/shape6.png' %}" class="shape-4 rotating" alt="shape">
 		<img src="{% static 'images/pattern/shape6.png' %}" class="shape-2 rotating" alt="shape">
 	</section>
-	<!-- Our Blog End  -->
+	<!-- Latest Activities End  -->
 	{% include 'web/partners.html' %}
 </div>
 {% endblock content %}

@@ -7,17 +7,16 @@ from .models import *
 
 
 def Index(request):
-    lang = request.session.get("language", "en")
-    partners = Partner.objects.all()
-
     context = {
-        "language": lang,
-        "partners": partners,
+        "language": request.session.get("language", "en"),
+        "home": HomePage.objects.first(),
+        "activities": Activity.objects.all(),
+        "partners": Partner.objects.all().order_by("-id")[:5][::-1],
     }
     return render(request, "web/index.html", context)
 
 
-def About(request):
+def AboutPage(request):
     lang = request.session.get("language", "en")
     context = {
         "language": lang,
@@ -25,12 +24,12 @@ def About(request):
     return render(request, "web/about.html", context)
 
 
-class Activities(ListView):
+class ActivitiesPage(ListView):
     model = Activity
     template_name = "web/activities.html"
     context_object_name = "activity"
     paginate_by = 6
-    ordering = ["-created_on", "-updated_on", "-id"]
+    ordering = ["-updated_on"]
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -44,10 +43,12 @@ class Activities(ListView):
     # return render(request, "web/activities.html", context)
 
 
-def Activity(request, slug=""):
+def ActivityPage(request, slug=""):
     lang = request.session.get("language", "en")
+    activity = Activity.objects.get(slug=slug)
     context = {
         "language": lang,
+        "activity": activity,
     }
     return render(request, "web/activity_detail.html", context)
 

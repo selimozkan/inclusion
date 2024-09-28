@@ -9,36 +9,28 @@
 				<div class="col-xl-12 col-lg-12 m-b30">
 					<div class="dz-card blog-single sidebar">
 						<div class="dz-media">
-							<img src="{% static 'images/blog/large/pic1.jpg' %}" alt="">
+							<img src="{{ activity.image.url }}" alt="{{ activity.title_en }}">
 						</div>
 						<div class="dz-info">
 							<div class="dz-meta">
 								<ul>
-									<li class="post-date"><i class="fa-solid fa-calendar-days"></i> 7 March, 2022</li>
-									<li class="post-author"><a href="javascript:void(0);"><i class="fa-solid fa-user"></i> By Johne Doe</a></li>
+									<li class="post-date"><i class="fa-solid fa-calendar-days"></i> {{ activity.updated_on | date:"d.m.Y" }}</li>
+									<li class="post-author"><a href="javascript:void(0);"><i class="fa-solid fa-user"></i> {{ activity.author}}</a></li>
 								</ul>
 							</div>
 							<div class="dz-post-text">
-								<h1 class="dz-title">When Professionals Run Into Problems With Agency</h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce venenatis, tortor in varius lobortis, sapien arcu ornare nisi, ut volutpat ante augue quis arcu. Phasellus lacinia magna elit, at maximus leo tristique non. Phasellus laoreet, nisi quis fermentum blandit, leo dolor bibendum arcu, vel dignissim diam odio a elit. In dapibus congue urna vitae porta. Quisque tincidunt velit sed ullamcorper pretium. Nullam vitae luctus libero.</p>
-								<ul class="wp-block-gallery columns-3">
-									<li class="blocks-gallery-item"><img alt="" src="{% static 'images/blog/blog-grid/pic2.jpg' %}"></li>
-									<li class="blocks-gallery-item"><img alt="" src="{% static 'images/blog/blog-grid/pic1.jpg' %}"></li>
-								</ul>
-								<p>Vestibulum porttitor purus commodo sagittis molestie. Fusce facilisis ipsum ut tincidunt suscipit. Vivamus tristique lectus quis dignissim convallis. Cras eget ipsum bibendum, feugiat libero in, scelerisque erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
-								<blockquote class="block-quote style-1">
-									<p>“You can make anything look good. Only a quarter of young adults are financially literate. You don’t want to overwhelm them with terrible advice.”</p>
-									<cite> Akcel </cite>
-								</blockquote>
-								<p>Aliquam in laoreet dui. Aliquam blandit nisl lacus, sed suscipit massa pulvinar vitae. Proin non dui eros. Mauris lobortis arcu a quam tincidunt, at consectetur urna dapibus. Curabitur sagittis nisl vel dolor porta, eu fringilla est accumsan. Donec eleifend dignissim risus a tempor. Sed suscipit ultrices viverra.</p>
-								<ul>
-									<li>Aliquam blandit nisl lacus, sed suscipit massa pulvinar vitae</li>
-									<li>Donec eleifend dignissim risus a tempor Sed suscipit ultrices viverra.</li>
-									<li>Only a quarter of young adults are financially literate overwhelm them advice.</li>
-									<li>Lorem ipsum dolor sit amet tortor in varius lobortis, sapien arcu ornare nisi</li>
-									<li>Curabitur sagittis nisl vel dolor fringilla est eleifend dignissim risus.</li>
-								</ul>
-								<p>Aliquam in laoreet dui. Aliquam blandit nisl lacus, sed suscipit massa pulvinar vitae. Proin non dui eros. Mauris lobortis arcu a quam tincidunt, at consectetur urna dapibus. Curabitur sagittis nisl vel dolor porta, eu fringilla est accumsan. Donec eleifend dignissim risus a tempor. Sed suscipit ultrices viverra.</p>
+								<h1 class="dz-title">
+								{% if language == 'en' %}
+								{{ activity.title_en | safe }}</h1>
+								{% else %}
+								{{ activity.title_ge | safe }}</h1>
+								{% endif %}
+								
+								{% if language == 'en' %}
+									{{ activity.article_en | safe }}
+								{% else %}
+									{{ activity.article_ge | safe }}	
+								{% endif %}
 							</div>
 						</div>
 					</div>

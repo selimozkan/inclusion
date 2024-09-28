@@ -64,9 +64,9 @@
 									<ul class="author-meta">
 										<li class="date">
 										{% if item.updated_on %}
-											{{ item.updated_on }}
+											{{ item.updated_on | date:"d.m.Y" }}
 										{% else %}
-											{{ item.created_on }}
+											{{ item.created_on | date:"d.m.Y" }}
 										{% endif %}
 											</li>
 									</ul>
