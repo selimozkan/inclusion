@@ -1,17 +1,20 @@
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "DjangoSecretKey")
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", default="DjangoSecretKey")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False if os.environ.get("DJANGO_DEBUG") == "False" else True
+DEBUG = os.getenv("DJANGO_DEBUG", default=False)
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [os.getenv("DJANGO_ALLOWED_HOSTS", default="127.0.0.1,localhost")]
 
 
 # Application definition
@@ -184,10 +187,10 @@ CKEDITOR_CONFIGS = {
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_UPLOAD_PATH = ""
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = "mail.inclusiondisabledpeople.com"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = False
-EMAIL_HOST_USER = "web@inclusiondisabledpeople.com"
-EMAIL_HOST_PASSWORD = "Parola.GT2024"
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_PORT = os.getenv("EMAIL_PORT")
+EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS")
+EMAIL_HOST_USER = os.getenv("EMAIL_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
