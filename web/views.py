@@ -10,8 +10,8 @@ def Index(request):
     context = {
         "language": request.session.get("language", "en"),
         "home": HomePage.objects.first(),
-        "activities": Activity.objects.all(),
-        "partners": Partner.objects.all().order_by("-id")[:5][::-1],
+        "activities": Activity.objects.all().order_by("-id")[:5][::-1],
+        "partners": Partner.objects.all(),
     }
     return render(request, "web/index.html", context)
 
@@ -20,6 +20,8 @@ def AboutPage(request):
     lang = request.session.get("language", "en")
     context = {
         "language": lang,
+        "about": About.objects.first(),
+        "partners": Partner.objects.all(),
     }
     return render(request, "web/about.html", context)
 
@@ -35,12 +37,6 @@ class ActivitiesPage(ListView):
         context = super().get_context_data(**kwargs)
         context["language"] = self.request.session["language"]
         return context
-
-    # lang = request.session.get("language", "en")
-    # context = {
-    #     "language": lang,
-    # }
-    # return render(request, "web/activities.html", context)
 
 
 def ActivityPage(request, slug=""):
