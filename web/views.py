@@ -35,7 +35,8 @@ class ActivitiesPage(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["language"] = self.request.session["language"]
+        lang = request.session.get("language", "en")
+        context["language"] = lang
         return context
 
 
