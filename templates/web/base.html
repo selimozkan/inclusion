@@ -24,10 +24,10 @@
   <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
 
   <!-- Stylesheet -->
-  <link href="{% static 'vendor/animate/animate.css' %}" rel="stylesheet">
-  {% comment %} <link href="{% static 'vendor/magnific-popup/magnific-popup.min.css' %}" rel="stylesheet"> {% endcomment %}
-  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-  <link href="{% static 'vendor/bootstrap-select/css/bootstrap-select.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendors/animate/animate.css' %}" rel="stylesheet">
+  {% comment %} <link href="{% static 'vendors/magnific-popup/magnific-popup.min.css' %}" rel="stylesheet"> {% endcomment %}
+  <link href="{% static 'vendors/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendors/bootstrap-select/css/bootstrap-select.min.css' %}" rel="stylesheet">
 
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -108,6 +108,13 @@
                 <li><a href="{% url 'index' %}">{% if language == 'en' %}Home{% else %}Haubtseite{% endif %}</a></li>
                 <li><a href="{% url 'about' %}">{% if language == 'en' %}About The Project{% else %}&#220;ber den Projekt{% endif %}</a></li>
                 <li><a href="{% url 'activities' %}">{% if language == 'en' %}Activities{% else %}Aktuelles{% endif %}</a></li>
+                <li>
+                  <a href="{% url 'pdfviewer' %}">
+                    {{ toolkit_title }}
+                    {% comment %} <i class="fa fa-file-pdf" aria-hidden="true"></i> Toolkit {% endcomment %}
+                  </a>
+                </li>
+
                 <li><a href="{% url 'contact' %}">{% if language == 'en' %}Contact Us{% else %}Kontakt Uns{% endif %}</a></li>
                 <li class="sub-menu-down">
                   <a href="javascript:void(0);">Language</a>
@@ -192,9 +199,9 @@
   </div>
   <!-- JAVASCRIPT FILES ========================================= -->
   <script src="{% static 'js/jquery.min.js' %}"></script><!-- JQUERY.MIN JS -->
-  <script src="{% static 'vendor/wow/wow.js' %}"></script><!-- WOW JS -->
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script><!-- BOOTSTRAP.MIN JS -->
-  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script><!-- OWL-CAROUSEL -->
+  <script src="{% static 'vendors/wow/wow.js' %}"></script><!-- WOW JS -->
+  <script src="{% static 'vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script><!-- BOOTSTRAP.MIN JS -->
+  <script src="{% static 'vendors/swiper/swiper-bundle.min.js' %}"></script><!-- OWL-CAROUSEL -->
   <script src="{% static 'js/dz.carousel.js' %}"></script><!-- OWL-CAROUSEL -->
   <script src="{% static 'js/custom.js' %}"></script><!-- CUSTOM JS -->
 </body>

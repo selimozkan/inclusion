@@ -62,6 +62,22 @@ def ContactUs(request):
     return render(request, "web/contact.html", context)
 
 
+def PDFViewer(request):
+    lng = request.session.get("language", "en")
+    if not lng:
+        lng = "en"
+    toolkit = Toolkit.objects.all()[:1].values(f"title_{lng}", f"url_{lng}")
+    if toolkit:
+        t = list(toolkit)
+        title = t[0][f"title_{lng}"]
+        file = t[0][f"url_{lng}"]
+        print(file)
+        return render(
+            request, "web/viewer.html", {"toolkit_title": title, "toolkit_file": file}
+        )
+    return render(request, "web/viewer.html")
+
+
 def change_language(request, lng="en"):
     request.session["language"] = "%s" % lng
     if request.META.get("HTTP_REFERER"):

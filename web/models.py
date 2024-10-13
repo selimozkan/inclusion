@@ -272,3 +272,44 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.phone + " " + self.email
+
+
+class Toolkit(models.Model):
+    url_en = models.FileField(
+        "Url English Toolkit",
+        null=True,
+        blank=True,
+        upload_to="toolkits/",
+        validators=[
+            FileExtensionValidator(
+                allowed_extensions=[
+                    "pdf",
+                ]
+            )
+        ],
+    )
+    title_en = models.CharField("Title English", null=True, blank=True, max_length=150)
+    url_de = models.FileField(
+        "Url German Toolkit",
+        null=True,
+        blank=True,
+        upload_to="toolkits/",
+        validators=[
+            FileExtensionValidator(
+                allowed_extensions=[
+                    "pdf",
+                ]
+            )
+        ],
+    )
+    title_de = models.CharField("Title German", null=True, blank=True, max_length=150)
+
+    class Meta:
+        db_table = "Toolkit"
+        verbose_name = "Toolkit"
+        verbose_name_plural = "Toolkits"
+        managed = True
+        ordering = ("id",)
+
+    def __str__(self):
+        return self.title_en

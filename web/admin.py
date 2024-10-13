@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
 
-from .models import General, HomePage, Partner, About, Activity, Contact
+from .models import General, HomePage, Partner, About, Activity, Contact, Toolkit
 
 admin.site.unregister(Group)
 admin.site.site_header = "Inclusion Disabled People Admin Panel"
@@ -138,3 +138,20 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Contact, ContactAdmin)
+
+
+class ToolkitAdmin(admin.ModelAdmin):
+    fields = ["url_en", "title_en", "url_de", "title_de"]
+    list_display = [
+        "title_en",
+        "url_en",
+    ]
+
+    def has_add_permission(self, request):
+        count = Toolkit.objects.all().count()
+        if count == 0:
+            return True
+        return False
+
+
+admin.site.register(Toolkit, ToolkitAdmin)
