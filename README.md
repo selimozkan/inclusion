@@ -1,8 +1,3 @@
-# Inclusion Dİsabled People Website
+# Inclusion Disabled People Website
 
-git init
-git add *
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/selimozkan/inclusion.git
-git push -u origin main
+Welcome to Inclusion Disabled People KA210-SSP Erasmus+ Web Site project official website.
