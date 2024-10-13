@@ -1,0 +1,54 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block content %}
+	<div class="page-content bg-white">
+
+	<!-- Banner  -->
+	<div class="dz-bnr-inr dz-bnr-inr-sm style-1 text-center overlay-primary-dark" style="background-image:url('{% static 'images/banner/bnr5.jpg' %}');">
+		<div class="container">
+			<div class="dz-bnr-inr-entry">
+				<h1>
+				{% if language == 'en' %}
+					Media Gallery
+				{% else %}
+					Mediengalerie
+				{% endif %}
+					</h1>
+				<!-- Breadcrumb Row -->
+				<nav aria-label="breadcrumb" class="breadcrumb-row">
+					<ul class="breadcrumb">
+						<li class="breadcrumb-item"><a href="{% url 'index' %}">{% if language == 'en' %}Home{% else %}Haubtseite{% endif %}</a></li>
+						<li class="breadcrumb-item active" aria-current="page">{% if language == 'en' %}Media Gallery{% else %}Mediengalerie{% endif %}</li>
+					</ul>
+				</nav>
+				<!-- Breadcrumb Row End -->
+			</div>
+		</div>
+	</div>
+	<!-- Banner End -->
+	<!-- Certificates -->
+	<div class="content-inner">
+		<div class="container">
+			
+			<div class="row certificates-bx" id="lightgallery">
+				{% for item in gallery  %}
+				<div class="col-xl-3 col-lg-4 col-6 m-b30">
+					<div class="dz-post-thum dz-img-effect object-fit-cover">
+						
+						<span data-exthumbimage="/media/{{item.image}}" data-src="/media/{{item.image}}" class="lightimg" title="{{item.title}}">
+							<img src="/media/{{item.image}}" alt="{{item.title}}">
+						</span>
+						<span style="text-align:center;display:block;padding-top:5px">{{item.title | safe}}</span>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<!-- Certificates -->
+
+	<hr class="container my-0">
+</div>
+
+{% endblock content %}

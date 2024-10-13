@@ -62,6 +62,12 @@ def ContactUs(request):
     return render(request, "web/contact.html", context)
 
 
+def GalleryPage(request):
+    lng = request.session.get("language", "en")
+    gallery = Gallery.objects.all().extra(select={"title": f"title_{lng}"})
+    return render(request, "web/gallery.html", {"gallery": gallery})
+
+
 def PDFViewer(request):
     lng = request.session.get("language", "en")
     if not lng:

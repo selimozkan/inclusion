@@ -313,3 +313,39 @@ class Toolkit(models.Model):
 
     def __str__(self):
         return self.title_en
+
+
+class Gallery(models.Model):
+    image = models.ImageField(upload_to="gallery/", null=True, blank=True)
+    title_en = models.CharField(max_length=150, null=True, blank=True)
+    title_de = models.CharField(max_length=150, null=True, blank=True)
+
+    class Meta:
+        db_table = "Gallery"
+        verbose_name = "Gallery Image"
+        verbose_name_plural = "Gallery Images"
+        managed = True
+        ordering = ("-id",)
+
+    def admin_thumbnail(self):
+        if self.image:
+            return mark_safe(
+                '<img src="%s" style="width:50px;" alt="" />' % self.image.url
+            )
+        else:
+            return "No Image"
+        admin_thumbnail.short_description = "Thumbnail"
+        admin_thumbnail.allow_tags = True
+
+    def admin_image(self):
+        if self.image:
+            return mark_safe(
+                '<img src="%s" style="width:250px;" alt="" />' % self.image.url
+            )
+        else:
+            return "No Image"
+        admin_image.short_description = "Image Preview"
+        admin_image.allow_tags = True
+
+    def __str__(self):
+        return self.title_en

@@ -1,7 +1,16 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
 
-from .models import General, HomePage, Partner, About, Activity, Contact, Toolkit
+from .models import (
+    General,
+    HomePage,
+    Partner,
+    About,
+    Activity,
+    Contact,
+    Toolkit,
+    Gallery,
+)
 
 admin.site.unregister(Group)
 admin.site.site_header = "Inclusion Disabled People Admin Panel"
@@ -155,3 +164,10 @@ class ToolkitAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Toolkit, ToolkitAdmin)
+
+
+@admin.register(Gallery)
+class GalleryAdmin(admin.ModelAdmin):
+    fields = ["admin_image", "image", "title_en", "title_de"]
+    list_display = ["admin_thumbnail", "title_en", "title_de"]
+    readonly_fields = ("admin_image",)

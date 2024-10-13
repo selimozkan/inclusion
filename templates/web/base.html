@@ -25,6 +25,8 @@
 
   <!-- Stylesheet -->
   <link href="{% static 'vendors/animate/animate.css' %}" rel="stylesheet">
+  <link href="{% static 'vendors/lightgallery/css/lightgallery.min.css' %}" rel="stylesheet">
+	
   {% comment %} <link href="{% static 'vendors/magnific-popup/magnific-popup.min.css' %}" rel="stylesheet"> {% endcomment %}
   <link href="{% static 'vendors/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendors/bootstrap-select/css/bootstrap-select.min.css' %}" rel="stylesheet">
@@ -108,6 +110,7 @@
                 <li><a href="{% url 'index' %}">{% if language == 'en' %}Home{% else %}Haubtseite{% endif %}</a></li>
                 <li><a href="{% url 'about' %}">{% if language == 'en' %}About The Project{% else %}&#220;ber den Projekt{% endif %}</a></li>
                 <li><a href="{% url 'activities' %}">{% if language == 'en' %}Activities{% else %}Aktuelles{% endif %}</a></li>
+                <li><a href="{% url 'gallery' %}">{% if language == 'en' %}Media Gallery{% else %}Mediengalerie{% endif %}</a></li>
                 <li>
                   <a href="{% url 'pdfviewer' %}">
                     {{ toolkit_title }}
@@ -202,6 +205,8 @@
   <script src="{% static 'vendors/wow/wow.js' %}"></script><!-- WOW JS -->
   <script src="{% static 'vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script><!-- BOOTSTRAP.MIN JS -->
   <script src="{% static 'vendors/swiper/swiper-bundle.min.js' %}"></script><!-- OWL-CAROUSEL -->
+  <script src="{% static 'vendors/lightgallery/js/lightgallery-all.min.js' %}"></script><!-- LIGHT GALLERY -->
+
   <script src="{% static 'js/dz.carousel.js' %}"></script><!-- OWL-CAROUSEL -->
   <script src="{% static 'js/custom.js' %}"></script><!-- CUSTOM JS -->
 </body>
