@@ -259,6 +259,41 @@ class Activity(models.Model):
         return self.title_en
 
 
+class ActivitySliderImage(models.Model):
+    activity_id = models.ForeignKey(Activity, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="activity_slider/", null=True, blank=True)
+    title_en = models.CharField(max_length=150, null=True, blank=True)
+    title_ge = models.CharField(max_length=150, null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Activity Slider Image"
+        verbose_name_plural = "Activity Slider Images"
+        managed = True
+
+    def activity_slider_image(self):
+        if self.image:
+            return mark_safe(
+                '<img src="%s" style="width:250px;" alt="" />' % self.image.url
+            )
+        else:
+            return "No Image"
+        activity_slider_image.short_description = "Image"
+        activity_slider_image.allow_tags = True
+
+    def activity_slider_thumbnail(self):
+        if self.image:
+            return mark_safe(
+                '<img src="%s" style="width:50px;" alt="" />' % self.image.url
+            )
+        else:
+            return "No Image"
+        activity_slider_thumbnail.short_description = "Thumbnail"
+        activity_slider_thumbnail.allow_tags = True
+
+    def __str__(self):
+        return self.title_en
+
+
 class Contact(models.Model):
     phone = models.CharField(max_length=20, blank=True, null=True)
     email = models.EmailField(max_length=254, blank=True, null=True)
@@ -274,12 +309,12 @@ class Contact(models.Model):
         return self.phone + " " + self.email
 
 
-class Toolkit(models.Model):
-    url_en = models.FileField(
-        "Url English Toolkit",
+class Guide(models.Model):
+    url = models.FileField(
+        "Url Guide",
         null=True,
         blank=True,
-        upload_to="toolkits/",
+        upload_to="guides/",
         validators=[
             FileExtensionValidator(
                 allowed_extensions=[
@@ -288,64 +323,68 @@ class Toolkit(models.Model):
             )
         ],
     )
-    title_en = models.CharField("Title English", null=True, blank=True, max_length=150)
-    url_de = models.FileField(
-        "Url German Toolkit",
-        null=True,
-        blank=True,
-        upload_to="toolkits/",
-        validators=[
-            FileExtensionValidator(
-                allowed_extensions=[
-                    "pdf",
-                ]
-            )
-        ],
-    )
-    title_de = models.CharField("Title German", null=True, blank=True, max_length=150)
+    title = models.CharField("Title", null=True, blank=True, max_length=150)
 
     class Meta:
-        db_table = "Toolkit"
-        verbose_name = "Toolkit"
-        verbose_name_plural = "Toolkits"
+        db_table = "Guide"
+        verbose_name = "Guide"
+        verbose_name_plural = "Guides"
         managed = True
         ordering = ("id",)
 
     def __str__(self):
-        return self.title_en
+        return self.title
 
 
-class Gallery(models.Model):
-    image = models.ImageField(upload_to="gallery/", null=True, blank=True)
-    title_en = models.CharField(max_length=150, null=True, blank=True)
-    title_de = models.CharField(max_length=150, null=True, blank=True)
+class Report(models.Model):
+    url = models.FileField(
+        "Url Report",
+        null=True,
+        blank=True,
+        upload_to="reports/",
+        validators=[
+            FileExtensionValidator(
+                allowed_extensions=[
+                    "pdf",
+                ]
+            )
+        ],
+    )
+    title = models.CharField("Title", null=True, blank=True, max_length=150)
 
     class Meta:
-        db_table = "Gallery"
-        verbose_name = "Gallery Image"
-        verbose_name_plural = "Gallery Images"
+        db_table = "Project Report"
+        verbose_name = "Project Report"
+        verbose_name_plural = "Project Reports"
         managed = True
-        ordering = ("-id",)
-
-    def admin_thumbnail(self):
-        if self.image:
-            return mark_safe(
-                '<img src="%s" style="width:50px;" alt="" />' % self.image.url
-            )
-        else:
-            return "No Image"
-        admin_thumbnail.short_description = "Thumbnail"
-        admin_thumbnail.allow_tags = True
-
-    def admin_image(self):
-        if self.image:
-            return mark_safe(
-                '<img src="%s" style="width:250px;" alt="" />' % self.image.url
-            )
-        else:
-            return "No Image"
-        admin_image.short_description = "Image Preview"
-        admin_image.allow_tags = True
+        ordering = ("id",)
 
     def __str__(self):
-        return self.title_en
+        return self.title
+
+
+class Shadowing(models.Model):
+    url = models.FileField(
+        "Url Job Shadowing",
+        null=True,
+        blank=True,
+        upload_to="shadowing/",
+        validators=[
+            FileExtensionValidator(
+                allowed_extensions=[
+                    "pdf",
+                ]
+            )
+        ],
+    )
+    title = models.CharField("Title", null=True, blank=True, max_length=150)
+
+    class Meta:
+        db_table = "Job Shadowing Report"
+        verbose_name = "Job Shadowing Report"
+        verbose_name_plural = "Job Shadowing Reports"
+        managed = True
+        ordering = ("id",)
+
+    def __str__(self):
+        return self.title

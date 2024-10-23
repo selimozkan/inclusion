@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import F
 
 from .models import *
 
@@ -43,9 +44,11 @@ class ActivitiesPage(ListView):
 def ActivityPage(request, slug=""):
     lang = request.session.get("language", "en")
     activity = Activity.objects.get(slug=slug)
+    activity_slider_images = ActivitySliderImage.objects.filter(activity_id=activity.id)
     context = {
         "language": lang,
         "activity": activity,
+        "activity_slider_images": activity_slider_images,
     }
     return render(request, "web/activity_detail.html", context)
 
@@ -62,26 +65,31 @@ def ContactUs(request):
     return render(request, "web/contact.html", context)
 
 
-def GalleryPage(request):
-    lng = request.session.get("language", "en")
-    gallery = Gallery.objects.all().extra(select={"title": f"title_{lng}"})
-    return render(request, "web/gallery.html", {"language": lng, "gallery": gallery})
+def GuidePage(request):
+    lang = request.session.get("language", "en")
+    guide = Shadowing.objects.first()
+    if guide:
+        file_url = guide.url
+        return render(request, "web/viewer.html", {"file_url": file_url})
+    return HttpResponseRedirect("/")
 
 
-def PDFViewer(request):
-    lng = request.session.get("language", "en")
-    if not lng:
-        lng = "en"
-    toolkit = Toolkit.objects.all()[:1].values(f"title_{lng}", f"url_{lng}")
-    if toolkit:
-        t = list(toolkit)
-        title = t[0][f"title_{lng}"]
-        file = t[0][f"url_{lng}"]
-        print(file)
-        return render(
-            request, "web/viewer.html", {"toolkit_title": title, "toolkit_file": file}
-        )
-    return render(request, "web/viewer.html")
+def ReportPage(request):
+    lang = request.session.get("language", "en")
+    report = Report.objects.first()
+    if report:
+        file_url = report.url
+        return render(request, "web/viewer.html", {"file_url": file_url})
+    return HttpResponseRedirect("/")
+
+
+def ShadowingPage(request):
+    lang = request.session.get("language", "en")
+    shadowing = Shadowing.objects.first()
+    if shadowing:
+        file_url = shadowing.url
+        return render(request, "web/viewer.html", {"file_url": file_url})
+    return HttpResponseRedirect("/")
 
 
 def change_language(request, lng="en"):

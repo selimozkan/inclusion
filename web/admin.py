@@ -7,9 +7,11 @@ from .models import (
     Partner,
     About,
     Activity,
+    ActivitySliderImage,
     Contact,
-    Toolkit,
-    Gallery,
+    Guide,
+    Report,
+    Shadowing,
 )
 
 admin.site.unregister(Group)
@@ -104,6 +106,25 @@ class AboutAdmin(admin.ModelAdmin):
 admin.site.register(About, AboutAdmin)
 
 
+class ActivityInline(admin.TabularInline):
+    model = ActivitySliderImage
+    extra = 0
+
+    fields = (
+        "activity_slider_image",
+        "image",
+        "activity_id",
+        "title_en",
+        "title_ge",
+    )
+    list_display = (
+        "activity_slider_thumbnail",
+        "title_en",
+        "title_ge",
+    )
+    readonly_fields = ("activity_slider_image",)
+
+
 @admin.register(Activity)
 class ActivityAdmin(admin.ModelAdmin):
     fields = (
@@ -135,6 +156,8 @@ class ActivityAdmin(admin.ModelAdmin):
     )
     ordering = ("-created_on", "-updated_on")
 
+    inlines = [ActivityInline]
+
 
 class ContactAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Contact._meta.fields if field.name]
@@ -149,25 +172,52 @@ class ContactAdmin(admin.ModelAdmin):
 admin.site.register(Contact, ContactAdmin)
 
 
-class ToolkitAdmin(admin.ModelAdmin):
-    fields = ["url_en", "title_en", "url_de", "title_de"]
+class GuideAdmin(admin.ModelAdmin):
+    fields = ["url", "title"]
     list_display = [
-        "title_en",
-        "url_en",
+        "title",
+        "url",
     ]
 
     def has_add_permission(self, request):
-        count = Toolkit.objects.all().count()
+        count = Guide.objects.all().count()
         if count == 0:
             return True
         return False
 
 
-admin.site.register(Toolkit, ToolkitAdmin)
+admin.site.register(Guide, GuideAdmin)
 
 
-@admin.register(Gallery)
-class GalleryAdmin(admin.ModelAdmin):
-    fields = ["admin_image", "image", "title_en", "title_de"]
-    list_display = ["admin_thumbnail", "title_en", "title_de"]
-    readonly_fields = ("admin_image",)
+class ReportAdmin(admin.ModelAdmin):
+    fields = ["url", "title"]
+    list_display = [
+        "title",
+        "url",
+    ]
+
+    def has_add_permission(self, request):
+        count = Report.objects.all().count()
+        if count == 0:
+            return True
+        return False
+
+
+admin.site.register(Report, ReportAdmin)
+
+
+class JobShadowingAdmin(admin.ModelAdmin):
+    fields = ["url", "title"]
+    list_display = [
+        "title",
+        "url",
+    ]
+
+    def has_add_permission(self, request):
+        count = Shadowing.objects.all().count()
+        if count == 0:
+            return True
+        return False
+
+
+admin.site.register(Shadowing, JobShadowingAdmin)

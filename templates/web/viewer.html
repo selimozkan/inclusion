@@ -400,10 +400,10 @@ See https://github.com/adobe-type-tools/cmap-resources
     <div id="printContainer"></div>
     <script>
       window.onload = function() {
-        console.log('/media/{{ toolkit_file }}')
+        console.log('/media/{{ file_url }}')
         PDFViewerApplication.open({
-          url: '/media/{{ toolkit_file }}',
-          originalUrl: '/media/{{ toolkit_file }}',
+          url: '/media/{{ file_url }}',
+          originalUrl: '/media/{{ file_url }}',
           pdfThumbnailViewer: 1,
         });        
       }
