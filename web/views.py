@@ -67,7 +67,7 @@ def ContactUs(request):
 
 def GuidePage(request):
     lang = request.session.get("language", "en")
-    guide = Shadowing.objects.first()
+    guide = Guide.objects.first()
     if guide:
         file_url = guide.url
         return render(request, "web/viewer.html", {"file_url": file_url})
