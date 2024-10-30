@@ -14,7 +14,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", default="DjangoSecretKey")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DJANGO_DEBUG", default=False)
 
-ALLOWED_HOSTS = [os.getenv("DJANGO_ALLOWED_HOSTS", default="127.0.0.1,localhost")]
+ALLOWED_HOSTS = ['inclusiondisabledpeople.com','www.inclusiondisabledpeople.com','localhost','127.0.0.1'] #os.getenv("DJANGO_ALLOWED_HOSTS", default="127.0.0.1,localhost")
 
 
 # Application definition

@@ -1,6 +1,4 @@
 from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
 from . import views
 
 
@@ -14,4 +12,4 @@ urlpatterns = [
     path("report/", views.ReportPage, name="report"),
     path("shadowing/", views.ShadowingPage, name="shadowing"),
     path("change-language/<lng>/", views.change_language, name="change-language"),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
