@@ -15,12 +15,12 @@
 									<div class="dz-card style-2">
 										<div class="dz-media">
 										{% if language == 'en' %}
-											<span data-exthumbimage="/media/{{slider_image.image.url}}" data-src="/media/{{slider_image.image.url}}" class="lightimg" title="{{slider_image.title_en}}">
+											<span data-exthumbimage="{{slider_image.image.url | safe}}" data-src="{{slider_image.image.url | safe}}" class="lightimg" title="{{slider_image.title_en}}">
 												<img src="{{ slider_image.image.url }}" alt="{{ slider_image.title_en }}">
 											</span>
 											<span style="text-align:center;display:block;padding-top:5px">{{slider_image.title_en | safe}}</span>
 										{% else %}
-											<span data-exthumbimage="/media/{{slider_image.image.url}}" data-src="/media/{{slider_image.image.url}}" class="lightimg" title="{{slider_image.title_ge}}">
+											<span data-exthumbimage="{{slider_image.image.url | safe}}" data-src="{{slider_image.image.url | safe}}" class="lightimg" title="{{slider_image.title_ge}}">
 												<img src="{{ slider_image.image.url }}" alt="{{ slider_image.title_ge }}">	
 											</span>
 											<span style="text-align:center;display:block;padding-top:5px">{{slider_image.title_en | safe}}</span>

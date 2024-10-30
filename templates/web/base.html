@@ -75,6 +75,7 @@
                 </li>
               </ul>
             </div>
+
             <div class="dz-topbar-right">
               <ul>
                 <li><i class="fas fa-phone"></i>{{ contact.phone }}</li>
@@ -88,12 +89,12 @@
       <!-- Main Header -->
       <div class="sticky-header main-bar-wraper navbar-expand-lg">
         <div class="main-bar clearfix ">
-          <div class="container clearfix">
+          <div class="container clearfix d-flex justify-content-between">
             <!-- Website Logo -->
             <div class="logo-header mostion logo-dark">
               <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
             </div>
-
+            <div style="margin:auto 0px auto 30px;"><img src="/media/eu.png" alt="Co-Funded by European Union" width="200" /> </div>
             <!-- Nav Toggle Button -->
             <button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span></span>

@@ -75,6 +75,7 @@ class PartnerAdmin(admin.ModelAdmin):
         "title",
         "web_link",
     )
+    list_display_links = ("logo_thumbnail", "title",)
     readonly_fields = ("logo_image",)
 
 
