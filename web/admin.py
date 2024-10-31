@@ -51,6 +51,7 @@ class HomePageAdmin(admin.ModelAdmin):
         "welcome_image_thumbnail",
         "welcome_title_en",
     )
+    list_display_links = ("welcome_image_thumbnail", "welcome_title_en",)
     readonly_fields = ("welcome_image_image",)
 
     def has_add_permission(self, request):
@@ -149,6 +150,7 @@ class ActivityAdmin(admin.ModelAdmin):
         "created_on",
         "updated_on",
     )
+    list_display_links = ("activity_thumbnail", "title_en",)
     readonly_fields = (
         "activity_image",
         "slug",
